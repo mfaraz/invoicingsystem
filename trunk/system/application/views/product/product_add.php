@@ -6,7 +6,7 @@
  * Window - Preferences - PHPeclipse - PHP - Code Templates
  */
  
-echo form_fieldset('产品添加');
+echo form_fieldset('产品添加/修改');
 ?>
 
 <?php
@@ -133,7 +133,6 @@ echo form_fieldset('产品添加');
 
 	<?php 		
 		echo form_submit('mysubmit', '保存',array('class'=>'sexybutton sexyorange'));	
-		echo anchor('product/product_list', '<span><span>返回</span></span>', array('class' => 'sexybutton sexyorange'));
 			
        
 	?>
