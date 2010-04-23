@@ -36,9 +36,10 @@
 		<td>
 		<?php echo anchor_popup("sale/sale_view/".$v['main_id'],"查看");?>
 		<?php echo anchor("sale/sale_add/".$v['main_id'],"修改");?>
-		<?php
-			$atts = array('onclick'=>'confirm("确定删除?");');
-			 echo anchor("sale/sale_delete/".$v['main_id'],"删除",$atts);?>
+		
+		<a href="<?php echo site_url("sale/sale_delete/".$v['main_id']); ?>" onclick="return confirm('确定删除?');">
+			删除
+		</a>
 		
 		</td>
 	</tr>	
