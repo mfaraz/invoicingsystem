@@ -29,7 +29,7 @@
 </div>
 
 
-	<div region="west" split="true" title="菜单" style="width:300px;">
+	<div region="west" split="true" title="菜单" style="width:150px;">
 			<div class="easyui-accordion" fit="true" border="false">
 				<div title="产品"   icon="icon-product" style="padding:10px;">
 					<p>
