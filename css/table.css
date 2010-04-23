@@ -44,8 +44,6 @@
 	border-right-color: #999999;
 	border-bottom-color: #999999;
 	background-color:#B4C3FA;
-
-
 	color:#ffffff;
 	line-height:150%;
 }
@@ -61,6 +59,6 @@
 
 .tr_hover{ background-color:#EEF3FD;}
 .tr_over{ background-color:#DAF2FE; }
-td,span{
+td,span,th,div,input,button,a{
 	font-size:12px;
 }
