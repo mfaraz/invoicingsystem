@@ -41,9 +41,11 @@
 	<td class="left"><textarea name="main[remarks]" rows="3" cols="55"><?php echo set_value('main[remarks]',$main['remarks']);?></textarea></td>
 </tr>
 </table>
+<center>
 <?php	
 	echo form_hidden("main[member_id]",$main['member_id']);
 	echo form_submit("submit","提交");
 	echo form_close();
 	echo form_fieldset_close();
 ?>
+</center>
