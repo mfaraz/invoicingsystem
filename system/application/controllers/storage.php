@@ -26,7 +26,7 @@
  	}
  	
  	/**
- 	 * 库存流转明细，反映库存变化情况
+ 	 * 库存流转明细，反映库存变化情况，数据过大原因，目前只处理单个产品
  	 */
  	function storage_detail(){
  		$this->db->select("b.product_real_name,b.product_name,a.product_id,abs(a.quantity) as quantity,if(a.quantity>0,a.quantity,0) as in_quantity,if(a.quantity<0,a.quantity,0) as out_quantity,if(a.type=1,'进货','销售') as type_name,date(a.insert_date) as insert_date ",false);
@@ -34,8 +34,12 @@
  		$this->db->join('product as b','a.product_id=b.product_id','inner');
  		$this->db->order_by('b.product_id','desc');	
  		$this->db->order_by('date(a.insert_date)','asc');	
- 		$this->db->order_by('a.type','asc');	
- 		$data  =  $this->mydb->getList(); 
+ 		$this->db->order_by('a.type','asc');
+ 		$product_name = $this->input->get("product_name");
+ 		if(empty($product_name)) $product_name ="-10000";
+ 		$this->db->where("b.product_name",$product_name);
+ 		$data  =  array("list"=>$this->db->get()->result_array());
+ 		if(empty($data)) return null;
  		$new_data = $data;
  		unset($new_data['list']); 		
  		foreach($data['list'] as $k=>$v){
@@ -44,11 +48,7 @@
  			$new_data['list'][$v['product_id']]['stat'] += $v['in_quantity']+$v['out_quantity'];
  			$v['stat'] = $new_data['list'][$v['product_id']]['stat'];
  			$new_data['list'][$v['product_id']]['detail'][] = $v;
- 			
- 			
- 		
  		}	
- 		
  		$this->mypage->loadview('storage/detail',$new_data);
  		
  	}

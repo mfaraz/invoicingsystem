@@ -1,3 +1,22 @@
+
+<?php
+$attr  = array('method'=>'get');
+echo form_open("storage/storage_detail",$attr);?>
+<table  align="center" class="table_search" >
+<tr>
+	<td>
+	请输入产品编号：
+	</td>
+	<td>
+	<input type="text" name="product_name"  value="<?php echo set_value(null,$_GET['product_name']); ?>"/>
+	</td>	
+	<td>
+		<?php echo form_submit("submit","查询"); ?>
+	</td>
+</tr>
+</table>
+<?php echo  form_close();?>
+<?php if($list):?>
 <div class="mytheme1" align="left" >库存流转明细</div>
 <table class="mytable" width="80%">
 	<tr>
@@ -9,8 +28,8 @@
 		<th>库存</th>
 	</tr>	
 	<?php
-	foreach($list as $k=>$v):
-	foreach($v['detail'] as $k1=>$v1):
+	foreach((array)$list as $k=>$v):
+	foreach((array)$v['detail'] as $k1=>$v1):
 	?>
 	<tr class="tr_center">	
 		<td><?php echo $v1['product_name'];?></td>
@@ -33,5 +52,4 @@
 	</tr>
 	<?php	endforeach;?>	
 </table>
-
-<div class="margin_25 center"><?php echo $page_link; ?></div>
+<?php endif;?>
