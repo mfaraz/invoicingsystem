@@ -86,7 +86,7 @@ $(document).ready(function(){
 
 
 $(function(){
-			$(".mytable tr:odd").addClass("tr_hover");  //隔行换色处			
+			//$(".mytable tr:odd").addClass("tr_hover");  //隔行换色处			
 			//鼠标经过样式变化处
 			$(".mytable tr").hover( 
                 function () { 

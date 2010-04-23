@@ -1,7 +1,7 @@
 	<div class="mytheme1" align="left" >进货按年统计</div>
 <table class="mytable">
 <tr>
-	<th>日期(年-月)</th>
+	<th>月份</th>
 	<th>产品</th>	
 	<th>真实名称</th>
 	<th>单价</th>

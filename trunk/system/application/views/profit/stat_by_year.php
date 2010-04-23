@@ -1,7 +1,7 @@
 <div class="mytheme1" align="left" >利润年统计</div>
 <table class="mytable" width="80%">
 	<tr>
-		<th>日期(年-月)</th>
+		<th>月份</th>
 		<th>销售金额</th>
 		<th>销售成本</th>		
 		<th>利润</th>
