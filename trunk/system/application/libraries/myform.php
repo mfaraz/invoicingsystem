@@ -52,7 +52,7 @@ if (!defined('BASEPATH')) show_error('No direct script access allowed');
 	function arrayToStr($arrays,$split=','){
 		$split = '';
 		$strval = '';
-		if(empty($arrays)) return array();
+		if(empty($arrays)) return null;
 		foreach ($arrays as $v){
 			if(!empty($v))
 			{
