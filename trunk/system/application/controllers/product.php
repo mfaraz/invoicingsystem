@@ -28,7 +28,7 @@ class Product extends Controller {
 	/**
 	 * 修改产品
 	 */
- 	function product_list(){   	 	
+ 	function product_list(){   		 	 	
  		$this->db->like("product_name",$this->input->get("product_name"));
  		$this->db->like("product_real_name",$this->input->get("product_real_name"));
  		$this->db->select('*')->from("product")->order_by("product_id","desc");
