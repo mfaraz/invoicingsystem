@@ -19,7 +19,7 @@ echo form_fieldset('产品添加/修改');
 
 
 	<tr  >
-		<th width="150">产品</th><th>真实名称</th><th width="150">单价</th><th width="150">备注</th><th width="150">操作</th>
+		<th width="150">产品</th><th>真实名称</th><th width="150">单价</th><th width="150">备注</th><th width="90">操作</th>
 	</tr>
 	
 <tbody id="operate_div">
@@ -107,12 +107,13 @@ echo form_fieldset('产品添加/修改');
 			?>	
 		
 		</td>		
-		<td  class="center ">	
-		
+		<td  class="center" >	
+			<div style="text-align:left;padding-left:10px;">
 			<a href="javascript:;"  target="_self" onclick="copy($(this))" class="red_font">复制</a>
 			
 			
 			<a href="javascript:;"  id="delete_link"  class="red_font <?php if ($k==0||$v["product_id"]):?>hide<?php endif;?>"    target="_self" onclick="drop($(this))" >删除</a>
+			</div>
 			
 		</td>
 				
