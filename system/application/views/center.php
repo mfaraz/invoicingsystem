@@ -14,11 +14,11 @@
 
 <div region="north" title="欢迎光临" split="true" style="height:100px;padding:10px;">
 
-	<h3>
+	<h4>
 		<?php
 			echo anchor('login/center', 'Easy进销存管理系统,当前版本v1.1,建议使用google浏览器使用本系统，如有商业需要，请联系QQ:150672834', array('title' => '点击返回主菜单'));
 		?>
-	</h3>
+	</h4>
 
 </div>
 
@@ -58,7 +58,7 @@
 				</div>
 				<div title="系统设置"  icon="icon-system" style="padding:10px;">
 					<p><?php  echo anchor('system_manage/change_password', '修改密码', array('title' => '修改密码','target'=>'__myframe',));?>&nbsp;</p>
-					<p><?php  echo anchor('system_manage/exit_system', '退出系统', array('title' => '退出系统','target'=>'parent'));?>&nbsp;</p>
+					<p><?php  echo anchor('system_manage/exit_system', '退出系统', array('title' => '退出系统','target'=>'_parent'));?>&nbsp;</p>
 				</div>	
 			</div>
 		</div>
