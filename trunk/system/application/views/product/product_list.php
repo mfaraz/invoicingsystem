@@ -6,7 +6,7 @@
  * Window - Preferences - PHPeclipse - PHP - Code Templates
  */
  $attributes = array('id' => 'form1'); 
- echo form_open("product/product_batch");
+ echo form_open("product/product_batch",$attributes);
 ?>
 
 <div id="parent"  style="text-align:right;padding-right:10%;margin-bottom:10px;">
@@ -25,8 +25,8 @@
 	<th width="200" >
 	<input type="checkbox" id="check_all"  >
 	全选
-	<button id="btn_update" value="update" class="sexybutton sexyorange"><span><span>修改</span></span></button>
-	<button id="btn_delete" value="delete"  class="sexybutton sexyorange"><span><span>删除</span></span></button>
+	<button id="btn_update" op_type="update" class="sexybutton sexyorange"><span><span>修改</span></span></button>
+	<button id="btn_delete" op_type="delete"  class="sexybutton sexyorange"><span><span>删除</span></span></button>
 	</th>
 	</tr>
 	
