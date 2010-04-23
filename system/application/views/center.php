@@ -3,11 +3,10 @@
 
 <script language="javascript">	
 	$(document).ready(function(){	
-		$('.easyui-tabs').tabs();	
-	
-		
-	})	
-	
+		if($('.easyui-tabs').size()>0){
+			$('.easyui-tabs').tabs();	
+		}		
+	})		
 </script>
 
 <div class="easyui-layout" style="width:100%;height:768px;">
