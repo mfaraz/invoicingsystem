@@ -15,7 +15,8 @@ if (!defined('BASEPATH')) show_error('No direct script access allowed');
  		$ci = & get_instance();	
  		$this->db = $ci->db;	
  		$this->uri = $ci->uri;	 		
- 		$this->myform  = &get_myform();	
+ 		$this->myform  = &get_myform();	 
+ 		$this->mypage  = &get_mypage();	 		
  		$this->config  = $ci->config;
  		$this->pagination  = $ci->pagination;	
  		
@@ -126,16 +127,13 @@ if (!defined('BASEPATH')) show_error('No direct script access allowed');
  	 * 查询列表
  	 */
  	function getList(){	
- 		$url_array = $this->uri->uri_to_assoc(1,array());
-		unset($url_array['page']);		
-		$str = $this->uri->assoc_to_uri($url_array);	
-		$config['base_url'] = 		site_url($str.'/page/');	
- 		$config['uri_segment'] = $this->uri->total_segments();	 		
+ 		$limit_from = $_GET['per_page']; 		
+ 		$link_str = $this->mypage->arrayToUrl($_GET);		
  		$params = array( 		
  			'limit_to'=>$this->config->item('per_page'),
- 			'limit_from'=>$this->uri->segment($this->uri->total_segments()),
- 		); 		
- 		
+ 			'limit_from'=>$limit_from,
+ 		); 	 		
+ 		$config['base_url'] = 		current_url().$link_str;
  		if(!isset($params['limit_from'])) $params['limit_from'] = 0;					
  			$sql_count =  $this->db->_compile_select();
 			$this->db->limit($params['limit_to'],$params['limit_from']);

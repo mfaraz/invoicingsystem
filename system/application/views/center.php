@@ -1,4 +1,4 @@
-<div class="easyui-layout" style="width:100%;height:768px;">
+<div class="easyui-layout" style="width:100%;height:768px;margin:0;padding:0;">
 <div region="north" title="Easy Sale Helper v1.1" split="true" style="height:100px;padding:10px;">
 
 		<h5>
