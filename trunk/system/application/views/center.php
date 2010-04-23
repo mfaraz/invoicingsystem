@@ -1,21 +1,9 @@
-
-
-
-<script language="javascript">	
-	$(document).ready(function(){	
-		if($('.easyui-tabs').size()>0){
-			$('.easyui-tabs').tabs();	
-		}		
-	})		
-</script>
-
 <div class="easyui-layout" style="width:100%;height:768px;">
-
 <div region="north" title="Easy Sale Helper v1.1" split="true" style="height:100px;padding:10px;">
 
 		<h5>
 		<?php
-			echo anchor('login/center', '当前版本v1.1,建议使用google浏览器使用本系统，如有商业需要，请联系QQ:150672834', array('title' => '点击返回主菜单'));
+			echo anchor('login/center', '本系统中文名为“销售助手”,建议使用google浏览器使用本系统，如有商业需要，请联系QQ:150672834', array('title' => '点击返回主菜单'));
 		?>
 		<h5>
 
@@ -23,7 +11,7 @@
 
 
 	<div region="west" split="true" title="菜单" style="width:150px;">
-			<div class="easyui-accordion" fit="true" border="false">
+			<div class="easyui-accordion"   animated="easeslide"   fit="true" border="false">
 				<div title="产品"   icon="icon-product" style="padding:10px;">
 					<p>
 					<?php  echo anchor('product/product_add', '添加', array('title' => '添加产品','target'=>'__myframe',));?>

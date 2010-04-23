@@ -1,3 +1,4 @@
+<center>进货单明细</center>
 <table align="center" class="margin_25"  width="40%">
 	<tr>		
 		<td class="right">日期：</td>
