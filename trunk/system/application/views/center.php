@@ -1,7 +1,8 @@
 <div class="easyui-layout" style="width:100%;height:768px;margin:0;padding:0;">
 <div region="north" title="Easy Sale Helper v1.1" split="true" style="height:100px;padding:10px;">
-
+		
 		<h5>
+		<image src="<?php echo base_url();?>/images/world.png" >
 		<?php
 			echo anchor('login/center', '本系统中文名为“销售助手”,建议使用google浏览器使用本系统，如有商业需要，请联系QQ:150672834', array('title' => '点击返回主菜单'));
 		?>
