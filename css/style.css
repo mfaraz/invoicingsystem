@@ -100,5 +100,42 @@ textarea{
 	text-align:left!important;padding-left:10px!important;
 }
 
+.link_view{	
+
+	background-image: url(../images/view.png);
+	background-repeat: no-repeat;
+	background-position: 1px 1px;
+	padding-left:25px;
+	
+}
+
+.link_mod{	
+
+	background-image: url(../images/mod.png);
+	background-repeat: no-repeat;
+	background-position: 1px 1px;
+	padding-left:25px;
+	
+}
+
+
+
+.link_del{	
+	background-image: url(../images/del.png);
+	background-repeat: no-repeat;
+	background-position: 1px 1px;
+	padding-left:25px;
+	
+}
+
+
+
+.link_add{	
+	background-image: url(../images/add.png);
+	background-repeat: no-repeat;
+	background-position: 1px 1px;
+	padding-left:25px;
+	
+}
 
 

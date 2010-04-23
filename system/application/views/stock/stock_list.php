@@ -44,10 +44,19 @@ echo form_open("stock/stock_list",$attr);?>
 		<td><?php echo $v['price'];?></td>
 		<td><?php echo $v['remarks'];?></td>		
 		<td>
-		<?php echo anchor_popup("stock/stock_view/".$v['main_id'],"查看");?>
-		<?php echo anchor("stock/stock_add/".$v['main_id'],"修改");?>
-		<a href="<?php echo site_url("stock/stock_delete/".$v['main_id']); ?>" onclick="return confirm('确定删除?');">
-			删除
+		<?php 
+			$attrs = array(
+				'class'=>'link_view',
+			);
+			echo anchor_popup("stock/stock_view/".$v['main_id'],"&nbsp;",$attrs);
+			
+			$attrs = array(
+				'class'=>'link_mod',
+			);
+			echo anchor("stock/stock_add/".$v['main_id'],"&nbsp;",$attrs);
+		?>
+		<a href="<?php echo site_url("stock/stock_delete/".$v['main_id']); ?>" onclick="return confirm('确定删除?');" class="link_del">
+			&nbsp;
 		</a>
 		</td>
 	</tr>	
