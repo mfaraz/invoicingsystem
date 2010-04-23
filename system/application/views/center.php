@@ -4,27 +4,21 @@
 <script language="javascript">	
 	$(document).ready(function(){	
 		$('.easyui-tabs').tabs();	
-		$.messager.show({
-					title:'温馨提示',
-					msg:'您已成功登陆本系统.现在时间：<?php echo date('m/d H:i:s');?>',
-					timeout:5000,
-					showType:'slide'
-				});
-		
+	
 		
 	})	
 	
 </script>
 
-<div class="easyui-layout" style="width:100%;height:800px;">
+<div class="easyui-layout" style="width:100%;height:768px;">
 
 <div region="north" title="欢迎光临" split="true" style="height:100px;padding:10px;">
 
-	<h2>
+	<h3>
 		<?php
-			echo anchor('login/center', 'Easy进销存管理系统,当前版本v1.1,如有商业需要，请联系QQ:150672834', array('title' => '点击返回主菜单'));
+			echo anchor('login/center', 'Easy进销存管理系统,当前版本v1.1,建议使用google浏览器使用本系统，如有商业需要，请联系QQ:150672834', array('title' => '点击返回主菜单'));
 		?>
-	</h2>
+	</h3>
 
 </div>
 
@@ -69,7 +63,7 @@
 			</div>
 		</div>
 		<div region="center"    title="主窗口" style="background:#eee;" border="false" >
-				<iframe src="<?php echo site_url("stock/stock_add");?>" name="__myframe" width="100%" height="748" frameborder="0" scrolling="auto"></iframe>
+				<iframe src="<?php echo site_url("stock/stock_add");?>" name="__myframe" width="100%" height="640" frameborder="0" scrolling="auto"></iframe>
 		
 		</div>
 

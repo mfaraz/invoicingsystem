@@ -12,7 +12,7 @@ class Login extends Controller {
 	function index()
 	{
 		$this->load->helper('form');			
-		$this->mypage->loadview("login,publisher");
+		$this->mypage->loadview("login");
 		
 		
 	}	
@@ -28,12 +28,12 @@ class Login extends Controller {
 		  
 		  if ($this->form_validation->run() == FALSE)
 		  {
-		 		$this->mypage->loadview("login,publisher");
+		 		$this->mypage->loadview("login");
 		  }
 		  else
 		  {		 
 		  		$this->myauth->process_in(array("user_name"=>$this->input->post("user_name")));
-		  		$this->mypage->loadview("center,publisher");
+		  		$this->mypage->loadview("center");
 		  		
 		
 		  }
@@ -45,7 +45,7 @@ class Login extends Controller {
 	 */
 	function center(){	
 			$this->myauth->execute_auth();	
-			$this->mypage->loadview("center,publisher");
+			$this->mypage->loadview("center");
 	}
 	
 	//验证用户名
