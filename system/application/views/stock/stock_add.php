@@ -18,7 +18,7 @@
 			 <th>真实名称</th>
 			 <th>数量</th> 
 			 <th>单价</th> 
-			 <th>操作</th>  
+			 <th width="90">操作</th>  
 		 </tr>
 		 <?php
 		 
@@ -42,7 +42,7 @@
 				<?php echo form_error("detail[product_price][$k]",'<div id="error_span" class="red_font">','</div>'); ?>
 		 </td> 
 		 
-		  <td>		
+		  <td class="td_op">		
 			<input type="hidden" name="detail[main_id][<?php echo $k;?>]" id='detail_main_id' value="<?php echo set_value("detail[main_id][$k]",$v['main_id']); ?>">
 			<input type="hidden" name="detail[detail_id][<?php echo $k;?>]" id='detail_id' value="<?php echo set_value("detail[detail_id][$k]",$v['detail_id']); ?>">
 			<a href="javascript:;"  target="_self" onclick="core_copy($(this),'#product_id,#quantity,#product_name,#detail_id','copy_extend')" class="red_font">复制</a>
