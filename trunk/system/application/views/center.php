@@ -17,6 +17,18 @@
 </script>
 
 <div class="easyui-layout" style="width:100%;height:800px;">
+
+<div region="north" title="欢迎光临" split="true" style="height:100px;padding:10px;">
+
+	<h2>
+		<?php
+			echo anchor('login/center', 'Easy进销存管理系统,当前版本v1.1,如有商业需要，请联系QQ:150672834', array('title' => '点击返回主菜单'));
+		?>
+	</h2>
+
+</div>
+
+
 	<div region="west" split="true" title="菜单" style="width:300px;">
 			<div class="easyui-accordion" fit="true" border="false">
 				<div title="产品"   icon="icon-product" style="padding:10px;">
@@ -26,7 +38,7 @@
 					<p><?php  echo anchor('product/product_list', '管理', array('title' => '管理产品','target'=>'__myframe',));?>&nbsp;</p>
 					
 				</div>	
-				<div title="采购"  icon="icon-stock" style="padding:10px;">
+				<div title="采购" selected="true" icon="icon-stock" style="padding:10px;">
 					<p><?php  echo anchor('stock/stock_add', '添加', array('title' => '添加进货','target'=>'__myframe',));?>&nbsp;</p>
 					<p><?php  echo anchor('stock/stock_list', '列表', array('title' => '进货管理','target'=>'__myframe',));?>&nbsp;</p>
 					<p><?php  echo anchor('stock/stat_by_date', '进货按日统计', array('title' => '进货按日统计','target'=>'__myframe',));?>&nbsp;</p>
@@ -57,7 +69,7 @@
 			</div>
 		</div>
 		<div region="center"    title="主窗口" style="background:#eee;" border="false" >
-				<iframe src="" name="__myframe" width="100%" height="748" frameborder="0" scrolling="auto"></iframe>
+				<iframe src="<?php echo site_url("stock/stock_add");?>" name="__myframe" width="100%" height="748" frameborder="0" scrolling="auto"></iframe>
 		
 		</div>
 
