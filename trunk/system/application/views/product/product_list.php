@@ -9,15 +9,8 @@
  echo form_open("product/product_batch",$attributes);
 ?>
 
-<div id="parent"  style="text-align:right;padding-right:10%;margin-bottom:10px;">
-
-    <?php    
-    	echo anchor('product/product_add', '添加产品', array('icon' => 'icon-add','class'=>'easyui-linkbutton'));
-    ?>
-</div>
-<div align="center" class="margin_25" width="80%">
 	<div class="mytheme1" align="left" >产品列表</div>
-</div>
+
 <table align="center" width="80%" class="mytable">
 	<tr>
 	<th>产品</th><th>真实名称</th><th>价格</th><th>备注</th>
