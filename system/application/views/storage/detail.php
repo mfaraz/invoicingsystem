@@ -1,6 +1,4 @@
-<div align="center" class="margin_25" width="80%">
 	<div class="mytheme1" align="left" >库存流转明细</div>
-</div>
 <table class="mytable" width="80%">
 	<tr>
 		<th>产品</th>	

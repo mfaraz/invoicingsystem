@@ -1,6 +1,4 @@
-<div align="center" class="margin_25" width="80%">
-	<div class="mytheme1" align="left" >利润日统计</div>
-</div>
+<div class="mytheme1" align="left" >利润日统计</div>
 <table class="mytable" width="80%">
 	<tr>
 		<th>销售日期</th>

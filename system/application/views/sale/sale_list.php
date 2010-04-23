@@ -1,24 +1,4 @@
-<?php
-/*
- * Created on 2010-4-15
- *
- * To change the template for this generated file go to
- * Window - Preferences - PHPeclipse - PHP - Code Templates
- */
- 
- 
- 
-?>
-
-<div id="parent"  style="text-align:right;padding-right:10%;margin-bottom:10px;">
-
-    <?php    
-    	echo anchor('sale/sale_add', '添加', array('icon' => 'icon-add','class'=>'easyui-linkbutton'));
-    ?>
-</div>
-<div align="center" class="margin_25" width="80%">
-	<div class="mytheme1" align="left" >销售列表</div>
-</div>
+<div class="mytheme1" align="left" >销售列表</div>
 <table class="mytable">
 	<tr>
 		<th>日期</th>

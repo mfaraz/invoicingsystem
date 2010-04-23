@@ -1,6 +1,4 @@
-<div align="center" class="margin_25" width="80%">
 	<div class="mytheme1" align="left" >进货按年统计</div>
-</div>
 <table class="mytable">
 <tr>
 	<th>日期(年-月)</th>

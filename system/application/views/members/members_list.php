@@ -1,13 +1,4 @@
-
-<div id="parent"  style="text-align:right;padding-right:10%;margin-bottom:10px;">
-
-    <?php    
-    	echo anchor('members/member_add', '添加会员', array('icon' => 'icon-add','class'=>'easyui-linkbutton'));
-    ?>
-</div>
-<div align="center" class="margin_25" width="80%">
-	<div class="mytheme1" align="left" >会员管理</div>
-</div>
+<div class="mytheme1" align="left" >会员管理</div>
 <table class="mytable">
 	<tr>
 		<th>姓名</th>

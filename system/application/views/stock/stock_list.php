@@ -1,6 +1,4 @@
-<div align="center" class="margin_25" width="80%">
-	<div class="mytheme1" align="left" >进货列表</div>
-</div>
+<div class="mytheme1" align="left" >进货列表</div>
 <table class="mytable">
 	<tr>
 		<th>日期</th>
