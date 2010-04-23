@@ -56,7 +56,7 @@
 				</div>	
 			</div>
 		</div>
-		<div region="center" title="主窗口" style="background:#eee;">
+		<div region="center"    title="主窗口" style="background:#eee;" border="false" >
 				<iframe src="" name="__myframe" width="100%" height="748" frameborder="0" scrolling="auto"></iframe>
 		
 		</div>
