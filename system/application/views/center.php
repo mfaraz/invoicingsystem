@@ -5,7 +5,7 @@
 		<?php
 			echo anchor('login/center', '本系统中文名为“销售助手”,建议使用google浏览器使用本系统，如有商业需要，请联系QQ:150672834', array('title' => '点击返回主菜单'));
 		?>
-		<h5>
+		</h5>
 
 </div>
 
