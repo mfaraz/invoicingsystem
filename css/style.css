@@ -73,7 +73,7 @@ a{
 	background-position:1px -1px;
 	width:80%;
 	text-align:left;
-	margin-left:5%;
+	margin-left:1%;
 	margin-bottom:10px;
 	
 }
@@ -135,6 +135,10 @@ textarea{
 	padding-left:20px;
 	padding-bottom:10px;
 	
+}
+body{
+
+	font-size:13px;
 }
 
 
