@@ -108,15 +108,13 @@ class Mypage{
 	 * 数组转成url
 	 */
 	function arrayToUrl($array){			
-		$link='';
-		$split ='';
+		$link='?1=1';
+		$split ='&';
 		if(empty($array)) return '?1=1';				
 		foreach($array as $k=>$v){
 			if(in_array($k,array('1','per_page'))) continue;
-			$link .= $split.$k.'='.$v;		
-			$split = '&';	
+			$link .= $split.$k.'='.$v;				
 		}
-		if($link)	$link = '?1=1&'.$link;
 		return $link;
 	}
 	
