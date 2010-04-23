@@ -17,16 +17,7 @@
 	function checkSelect(){	
 		var check_size = $('[id="ids"]:checked').size();
 		if(check_size==0){
-				$('#dialog').show().dialog({
-					buttons:[{
-						text:'Ok',
-						iconCls:'icon-ok',
-						handler:function(){
-							$('#dialog').dialog('close');
-						}
-					},]
-					
-				});
+				$('#dialog').show().dialog();
 				return false;
 		}	
 		return true;		
