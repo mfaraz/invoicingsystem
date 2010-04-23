@@ -40,7 +40,8 @@ function autocomplete_load(obj){
 		$(obj).combobox({
 			url:$('#sys_base_url').html()+'js/cache/product.json',
 			valueField:'product_id',
-			textField:'product_name'			
+			textField:'product_name',
+			cache:"false"
 		});	
 	
 }
