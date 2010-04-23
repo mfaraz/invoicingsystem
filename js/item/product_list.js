@@ -42,15 +42,16 @@
 		
 		//触发提交
 		$('#op_type').bind('change',function(){			
-			//$('#form1').submit();
+			$('#form1').submit();
 		});
 				
 		
 		//提交修改，删除
-		$('#btn_update,#btn_delete').click(function(){				
-			if(checkSelect()==true){				
-				$('#op_type').val($(this).val())
+		$('#btn_update,#btn_delete').click(function(){			
+			if(checkSelect()==true){					
+				$('#op_type').val($(this).attr("op_type"))				
 				$('#op_type').trigger("change");
+			
 			}else{
 				return false;
 			}
