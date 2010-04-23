@@ -54,6 +54,7 @@
 	display:none;
 	border:1px solid #A4BED4;
 	overflow-x:hidden;
+	height:350px;
 	overflow-y:auto;
 }
 .combobox-item{
@@ -61,6 +62,7 @@
 	font-size:12px;
 	padding:3px;
 	padding-right:0px;
+	
 }
 .combobox-item-hover{
 	background:#fafafa;
