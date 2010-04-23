@@ -12,7 +12,7 @@ class Login extends Controller {
 	function index()
 	{
 		$this->load->helper('form');			
-		$this->mypage->loadview("login");
+		$this->mypage->loadview("welcome,login,publisher");
 		
 		
 	}	
