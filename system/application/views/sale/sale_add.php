@@ -7,7 +7,7 @@
  */
  
  
- echo form_fieldset("添加销售");
+ echo form_fieldset("添加/修改销售");
  echo form_open("sale/sale_save",array("id"=>"form1"));
   
  ?>
@@ -18,7 +18,7 @@
 			 <th>真实名称</th>
 			 <th>数量</th> 
 			 <th>单价</th> 
-			 <th>操作</th>  
+			 <th width="90">操作</th>  
 		 </tr>
 		 <?php
 		 
