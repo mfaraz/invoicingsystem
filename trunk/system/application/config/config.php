@@ -333,4 +333,4 @@ $config['default_css'] = array('style','table','themes/default/easyui','themes/i
 //默认加载js
 $config['default_js'] = array('jquery-1.4.2.min','jquery.easyui.min','jquery_ui/jquery.ui.core','jquery_ui/jquery.ui.widget','jquery_ui/jquery.ui.datepicker','core');
 //per page
-$config['per_page'] = '20';
+$config['per_page'] = '15';
