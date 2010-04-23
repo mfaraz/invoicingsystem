@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2010 年 04 月 23 日 02:55
+-- 生成日期: 2010 年 04 月 23 日 15:33
 -- 服务器版本: 5.0.45
 -- PHP 版本: 5.2.5
 
@@ -74,7 +74,7 @@ CREATE TABLE `product` (
   `last_update_time` timestamp NOT NULL default CURRENT_TIMESTAMP,
   `product_price` decimal(20,2) NOT NULL,
   PRIMARY KEY  (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=268 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=269 ;
 
 --
 -- 导出表中的数据 `product`
@@ -150,7 +150,8 @@ INSERT INTO `product` (`product_id`, `product_real_name`, `product_name`, `produ
 (264, '', '维纳斯', '', '2010-04-22 20:58:16', '2010-04-22 20:58:16', 4.20),
 (265, '', '浪莎短袜', '', '2010-04-22 20:58:16', '2010-04-22 20:58:16', 1.20),
 (266, '', '花边肩带', '', '2010-04-22 21:01:10', '2010-04-22 21:01:10', 1.50),
-(267, '', '肩带', '', '2010-04-22 21:01:10', '2010-04-22 21:01:10', 1.30);
+(267, '', '肩带', '', '2010-04-22 21:01:10', '2010-04-22 21:01:10', 1.30),
+(268, '', '笔芯', '', '2010-04-23 20:47:50', '2010-04-23 20:47:50', 0.70);
 
 -- --------------------------------------------------------
 
@@ -167,12 +168,20 @@ CREATE TABLE `sale_detail` (
   PRIMARY KEY  (`detail_id`),
   KEY `main_id` (`main_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
 -- 导出表中的数据 `sale_detail`
 --
 
+INSERT INTO `sale_detail` (`detail_id`, `main_id`, `product_id`, `quantity`, `product_price`) VALUES
+(10, 49, 198, 1, 45.00),
+(11, 49, 244, 1, 40.00),
+(12, 49, 242, 1, 40.00),
+(13, 49, 229, 1, 20.00),
+(14, 49, 215, 2, 30.00),
+(15, 49, 255, 1, 15.00),
+(16, 49, 268, 2, 2.00);
 
 -- --------------------------------------------------------
 
@@ -186,12 +195,14 @@ CREATE TABLE `sale_main` (
   `last_update_time` timestamp NOT NULL default CURRENT_TIMESTAMP,
   `remarks` varchar(200) NOT NULL,
   PRIMARY KEY  (`main_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=46 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=50 ;
 
 --
 -- 导出表中的数据 `sale_main`
 --
 
+INSERT INTO `sale_main` (`main_id`, `insert_date`, `last_update_time`, `remarks`) VALUES
+(49, '2010-04-23 00:00:00', '2010-04-23 21:14:36', '');
 
 -- --------------------------------------------------------
 
@@ -207,7 +218,7 @@ CREATE TABLE `stock_detail` (
   PRIMARY KEY  (`detail_id`),
   KEY `main_id` (`main_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=233 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=234 ;
 
 --
 -- 导出表中的数据 `stock_detail`
@@ -283,7 +294,8 @@ INSERT INTO `stock_detail` (`detail_id`, `main_id`, `product_id`, `quantity`) VA
 (229, 49, 264, 6),
 (230, 49, 265, 10),
 (231, 49, 266, 11),
-(232, 49, 267, 7);
+(232, 49, 267, 7),
+(233, 49, 268, 100);
 
 -- --------------------------------------------------------
 
