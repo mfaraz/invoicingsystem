@@ -1,3 +1,32 @@
+<?php
+$attr  = array('method'=>'get');
+echo form_open("sale/sale_list",$attr);?>
+<table  align="center" class="table_search" >
+<tr>
+	<td>
+	产品：
+	</td>
+	<td>
+	<input type="text" name="product_name"  value="<?php echo set_value(null,$_GET['product_name']); ?>"/>
+	</td>
+	<td>
+	真实名称：
+	</td>
+	<td>
+	<input type="text" name="product_real_name" value="<?php echo set_value(null,$_GET['product_real_name']); ?>"  />
+	</td>
+	<td>
+	日期：
+	</td>
+	<td>
+	<input type="text" name="insert_date"  class="datepicker"   value="<?php echo set_value(null,$_GET['insert_date']); ?>">
+	</td>
+	<td>
+		<?php echo form_submit("submit","查询"); ?>
+	</td>
+</tr>
+</table>
+<?php echo  form_close();?>
 <div class="mytheme1" align="left" >销售列表</div>
 <table class="mytable">
 	<tr>
