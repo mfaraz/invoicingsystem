@@ -11,13 +11,13 @@
 
 <div class="easyui-layout" style="width:100%;height:768px;">
 
-<div region="north" title="欢迎光临" split="true" style="height:100px;padding:10px;">
+<div region="north" title="Easy Sale Helper v1.1" split="true" style="height:100px;padding:10px;">
 
-	<h4>
+		<h5>
 		<?php
-			echo anchor('login/center', 'Easy进销存管理系统,当前版本v1.1,建议使用google浏览器使用本系统，如有商业需要，请联系QQ:150672834', array('title' => '点击返回主菜单'));
+			echo anchor('login/center', '当前版本v1.1,建议使用google浏览器使用本系统，如有商业需要，请联系QQ:150672834', array('title' => '点击返回主菜单'));
 		?>
-	</h4>
+		<h5>
 
 </div>
 
@@ -62,7 +62,7 @@
 			</div>
 		</div>
 		<div region="center"    title="主窗口" style="background:#ffffff;" border="false" >
-				<iframe src="<?php echo site_url("stock/stock_add");?>" name="__myframe" width="100%" height="640" frameborder="0" scrolling="auto"></iframe>
+				<iframe src="<?php echo site_url("stock/stock_list");?>" name="__myframe" width="100%" height="640" frameborder="0" scrolling="auto"></iframe>
 		
 		</div>
 
