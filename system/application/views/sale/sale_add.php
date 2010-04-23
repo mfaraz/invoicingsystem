@@ -44,7 +44,7 @@
 		  <td>		
 			<input type="hidden" name="detail[main_id][<?php echo $k;?>]" id='detail_main_id' value="<?php echo set_value("detail[main_id][$k]",$v['main_id']); ?>">
 			<input type="hidden" name="detail[detail_id][<?php echo $k;?>]" id='detail_id' value="<?php echo set_value("detail[detail_id][$k]",$v['detail_id']); ?>">
-			<a href="javascript:;"  target="_selft" onclick="core_copy($(this),'#product_id,#quantity,#product_name,#detail_id','copy_extend')" class="red_font">复制</a>
+			<a href="javascript:;"  target="_self" onclick="core_copy($(this),'#product_id,#quantity,#product_name,#detail_id','copy_extend')" class="red_font">复制</a>
 			<a href="javascript:;"  id="delete_link"  class="red_font  <?php if($k==0):?>hide<?php endif;?>"    target="_selft" onclick="core_drop($(this))" >删除</a>
 	
 		 </td> 
