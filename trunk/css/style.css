@@ -70,7 +70,7 @@ a{
 	background-image: url(themes/default/images/layout_button_right.gif);
 	background-repeat: no-repeat;
 	padding-left:25px;
-	background-position:1px 2px;
+	background-position:1px -1px;
 	width:80%;
 	text-align:left;
 	margin-left:5%;
