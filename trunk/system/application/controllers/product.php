@@ -28,21 +28,11 @@ class Product extends Controller {
 	/**
 	 * 修改产品
 	 */
- 	function product_list(){   	
- 		$url_array = $this->uri->uri_to_assoc(1,array());
-		unset($url_array['page']);		
-		$str = $this->uri->assoc_to_uri($url_array);	
-		$config['base_url'] = 		site_url($str.'/page/');	
- 		$config['uri_segment'] = $this->uri->total_segments();	 		
- 		$params = array( 		
- 			'limit_to'=>$this->config->item('per_page'),
- 			'limit_from'=>$this->uri->segment($this->uri->total_segments()),
- 		);
- 		$data = $this->Productmodel->products($params);  		
- 		$config['per_page'] = $this->config->item('per_page'); 			
- 		$config['total_rows'] = $data['count'];  		
- 		$this->pagination->initialize($config); 
- 		$data['page_link'] = $this->pagination->create_links(); 
+ 	function product_list(){   	 	
+ 		$this->db->like("product_name",$this->input->get("product_name"));
+ 		$this->db->like("product_real_name",$this->input->get("product_real_name"));
+ 		$this->db->select('*')->from("product")->order_by("product_id","desc");
+ 		$data = $this->mydb->getList(); 
  		$this->mypage->getHeaderCss('sexybuttons');
  		$this->mypage->getHeaderJs('/item/product_list');
  		$this->mypage->loadview('product/product_list',$data);
