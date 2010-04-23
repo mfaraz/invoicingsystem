@@ -25,7 +25,7 @@
 	<tr >		
 		<td ></td>
 		<td></td>
-		<td  class="right"><span class="red_font">剩余：</span></td>
+		<td  class="right"><span class="red_font">合计：</span></td>
 		<td class="center"><?php echo $v['stat']?></td>
 	
 	</tr>

@@ -104,8 +104,9 @@ textarea{
 
 	background-image: url(../images/view.png);
 	background-repeat: no-repeat;
-	background-position: 1px 1px;
+	background-position: 0px 0px;
 	padding-left:25px;
+	padding-bottom:10px;
 	
 }
 
@@ -113,8 +114,9 @@ textarea{
 
 	background-image: url(../images/mod.png);
 	background-repeat: no-repeat;
-	background-position: 1px 1px;
+	background-position: 0px 0px;
 	padding-left:25px;
+	padding-bottom:10px;
 	
 }
 
@@ -123,9 +125,9 @@ textarea{
 .link_del{	
 	background-image: url(../images/del.png);
 	background-repeat: no-repeat;
-	background-position: 1px 1px;
+	background-position: 0px 0px;
 	padding-left:25px;
-	
+	padding-bottom:10px;
 }
 
 
@@ -133,8 +135,9 @@ textarea{
 .link_add{	
 	background-image: url(../images/add.png);
 	background-repeat: no-repeat;
-	background-position: 1px 1px;
+	background-position: 0px 0px;
 	padding-left:25px;
+	padding-bottom:10px;
 	
 }
 

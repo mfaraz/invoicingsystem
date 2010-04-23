@@ -61,7 +61,7 @@
 				</div>	
 			</div>
 		</div>
-		<div region="center"    title="主窗口" style="background:#eee;" border="false" >
+		<div region="center"    title="主窗口" style="background:#ffffff;" border="false" >
 				<iframe src="<?php echo site_url("stock/stock_add");?>" name="__myframe" width="100%" height="640" frameborder="0" scrolling="auto"></iframe>
 		
 		</div>

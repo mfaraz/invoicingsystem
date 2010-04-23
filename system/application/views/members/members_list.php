@@ -16,8 +16,12 @@
 		<td><?php echo $v['qq']; ?></td>
 		<td><?php echo $v['remarks']; ?></td>
 		<td>
-			<?php echo anchor('members/member_add/'.$v['member_id'],'修改'); ?>
-			<a href="<?php echo site_url("members/member_delete/".$v['member_id']."");?>" onclick="return confirm('确认删除?');">删除</a>
+			<?php 
+			$attrs  = array(
+				'class'=>'link_mod',
+			);
+			echo anchor('members/member_add/'.$v['member_id'],'&nbsp;',$attrs); ?>
+			<a href="<?php echo site_url("members/member_delete/".$v['member_id']."");?>" onclick="return confirm('确认删除?');" class="link_del">&nbsp;</a>
 			
 		</td>
 	
