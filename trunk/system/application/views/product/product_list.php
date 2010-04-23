@@ -33,11 +33,10 @@ echo form_open("product/product_list",$attr);?>
 	<tr>
 	<th>产品</th><th>真实名称</th><th>价格</th><th>备注</th>
 	<th>添加时间</th><th>修改时间</th>
-	<th width="200" >
+	<th width="150" >
 	<input type="checkbox" id="check_all"  >
-	全选
-	<button id="btn_update" op_type="update" class="sexybutton sexyorange"><span><span>修改</span></span></button>
-	<button id="btn_delete" op_type="delete"  class="sexybutton sexyorange"><span><span>删除</span></span></button>
+	<a href="javascript:;" id="btn_update" op_type="update" class="link_mod">&nbsp;</a>
+	<a href="javascript:;" id="btn_delete" op_type="delete" class="link_del">&nbsp;</a>
 	</th>
 	</tr>
 	
