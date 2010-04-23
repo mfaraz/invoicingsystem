@@ -23,13 +23,13 @@
 					<p><?php  echo anchor('stock/stock_add', '添加', array('title' => '添加进货','target'=>'__myframe',));?>&nbsp;</p>
 					<p><?php  echo anchor('stock/stock_list', '列表', array('title' => '进货管理','target'=>'__myframe',));?>&nbsp;</p>
 					<p><?php  echo anchor('stock/stat_by_date', '进货按日统计', array('title' => '进货按日统计','target'=>'__myframe',));?>&nbsp;</p>
-					<p><?php  echo anchor('stock/stat_by_year', '进货按年统计', array('title' => '进货按年统计','target'=>'__myframe',));?>&nbsp;</p>
+					<p><?php  echo anchor('stock/stat_by_year', '进货按月统计', array('title' => '进货按月统计','target'=>'__myframe',));?>&nbsp;</p>
 				</div>	
 				<div title="销售"  icon="icon-sale" style="padding:10px;">
 					<p><?php  echo anchor('sale/sale_add', '添加', array('title' => '添加销售','target'=>'__myframe',));?>&nbsp;</p>
 					<p><?php  echo anchor('sale/sale_list', '列表', array('title' => '销售管理','target'=>'__myframe',));?>&nbsp;</p>
 					<p><?php  echo anchor('sale/stat_by_date', '销售按日统计', array('title' => '销售按日统计','target'=>'__myframe',));?>&nbsp;</p>
-					<p><?php  echo anchor('sale/stat_by_year', '销售按年统计', array('title' => '销售按年统计','target'=>'__myframe',));?>&nbsp;</p>
+					<p><?php  echo anchor('sale/stat_by_year', '销售按月统计', array('title' => '销售按月统计','target'=>'__myframe',));?>&nbsp;</p>
 				</div>
 				<div title="库存"  icon="icon-storage" style="padding:10px;">
 					<p><?php  echo anchor('storage/storage_stat', '统计', array('title' => '统计','target'=>'__myframe',));?>&nbsp;</p>
@@ -37,7 +37,7 @@
 				</div>
 				<div title="利润"  icon="icon-profit" style="padding:10px;">
 					<p><?php  echo anchor('profit/stat_by_date', '日统计', array('title' => '日统计','target'=>'__myframe',));?>&nbsp;</p>
-					<p><?php  echo anchor('profit/stat_by_year', '年统计', array('title' => '年统计','target'=>'__myframe',));?>&nbsp;</p>
+					<p><?php  echo anchor('profit/stat_by_year', '月统计', array('title' => '月统计','target'=>'__myframe',));?>&nbsp;</p>
 				</div>
 				<div title="VIP会员"  icon="icon-uesrs" style="padding:10px;">
 					<p><?php  echo anchor('members/member_add', '添加会员', array('title' => '添加会员','target'=>'__myframe',));?>&nbsp;</p>
