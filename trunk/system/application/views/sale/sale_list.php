@@ -32,7 +32,8 @@ echo form_open("sale/sale_list",$attr);?>
 	<tr>
 		<th>日期</th>
 		<th>件数</th>
-		<th>金额</th>
+		<th>销售额</th>
+		<th>利润</th>
 		<th>备注</th>
 		<th>操作</th>
 	</tr>
@@ -41,6 +42,7 @@ echo form_open("sale/sale_list",$attr);?>
 		<td><?php echo $v['insert_date'];?></td>
 		<td><?php echo $v['p_count'];?></td>
 		<td><?php echo $v['price'];?></td>
+		<td><?php echo $v['profit'];?></td>
 		<td><?php echo $v['remarks'];?></td>		
 		<td>
 		
