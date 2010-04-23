@@ -69,6 +69,9 @@
  	 */
  	function stock_list(){ 		
  		$data = null;
+ 		if($this->input->get('insert_date'))	$this->db->where('stock_main.insert_date',$this->input->get('insert_date'));
+ 		$this->db->like('product.product_name',$this->input->get('product_name'));
+ 		$this->db->like('product.product_real_name',$this->input->get('product_real_name'));
  		$this->db->select('stock_detail.main_id,sum(stock_detail.quantity*product.product_price) as price,count(distinct stock_detail.product_id) as p_count,date(stock_main.insert_date) as insert_date,stock_main.remarks')
  		->from('stock_detail') 
  		->join('stock_main','stock_main.main_id=stock_detail.main_id','inner') 

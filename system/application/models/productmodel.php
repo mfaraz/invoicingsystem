@@ -54,21 +54,7 @@
  		
  	}
  	
- 	/**
- 	 * 产品列表
- 	 */
- 	function products($params){ 	 
- 			if(!isset($params['limit_from'])) $params['limit_from'] = 0;					
- 			$sql_count =  $this->db->select('*')->from("product")->_compile_select();
-			$this->db->limit($params['limit_to'],$params['limit_from'])->order_by('product_id','desc');
-			$sql = $this->db->_compile_select();			
-			$data = array(
-				'count' => $this->db->count_all("($sql_count)as t "),
-				'list' => $this->db->query($sql)->result_array(),
-			
-			);		
- 			return $data; 		
- 	}
+ 	
  	
  	/**
  	 * 产品简单查询

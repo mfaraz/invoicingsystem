@@ -62,3 +62,8 @@
 td,span,th,div,input,button,a{
 	font-size:12px;
 }
+
+.table_search td {
+	padding-left:20px;
+	
+}

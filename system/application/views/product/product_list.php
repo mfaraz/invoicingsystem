@@ -1,13 +1,31 @@
+<?php 
+$attr  = array('method'=>'get');
+echo form_open("product/product_list",$attr);?>
+<table  align="center" class="table_search" >
+<tr>
+	<td>
+	产品：
+	</td>
+	<td>
+	<input type="text" name="product_name" value="<?php echo $_GET['product_name']; ?>"  />
+	</td>
+	<td>
+	真实名称：
+	</td>
+	<td>
+	<input type="text" name="product_real_name" value="<?php echo $_GET['product_real_name']; ?>">
+	</td>
+	<td>
+		<?php echo form_submit("submit","查询"); ?>
+	</td>
+</tr>
+</table>
+<?php echo  form_close();?>
 <?php
-/*
- * Created on 2010-4-13
- *
- * To change tde template for tdis generated file go to
- * Window - Preferences - PHPeclipse - PHP - Code Templates
- */
  $attributes = array('id' => 'form1'); 
  echo form_open("product/product_batch",$attributes);
 ?>
+
 
 	<div class="mytheme1" align="left" >产品列表</div>
 
