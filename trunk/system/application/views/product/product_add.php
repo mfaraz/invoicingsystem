@@ -107,13 +107,11 @@ echo form_fieldset('产品添加/修改');
 			?>	
 		
 		</td>		
-		<td  class="center" >	
-			<div style="text-align:left;padding-left:10px;">
+		<td   class="td_op" >	
+			
 			<a href="javascript:;"  target="_self" onclick="copy($(this))" class="red_font">复制</a>
 			
-			
 			<a href="javascript:;"  id="delete_link"  class="red_font <?php if ($k==0||$v["product_id"]):?>hide<?php endif;?>"    target="_self" onclick="drop($(this))" >删除</a>
-			</div>
 			
 		</td>
 				
