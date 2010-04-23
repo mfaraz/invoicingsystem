@@ -7,7 +7,7 @@
  */
  
  
- echo form_fieldset("添加进货");
+ echo form_fieldset("添加/修改进货");
  echo form_open("stock/stock_save",array("id"=>"form1"));
   
  ?>
