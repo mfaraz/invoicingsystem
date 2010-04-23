@@ -18,9 +18,11 @@
 <?php echo form_error("main[confirm_password]","<div id='error_span' class='red_font'>","</div>");?>
 </td></tr>
 </table>
+<center>
 <?php
 	echo form_hidden("main[admin_id]",$main['admin_id']);
 	echo form_submit("submit","提交");
 	echo form_close();
 	echo form_fieldset_close();
 ?>
+</center>
