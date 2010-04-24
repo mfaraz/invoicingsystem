@@ -75,8 +75,7 @@ if (!defined('BASEPATH')) show_error('No direct script access allowed');
 				$temp_v = array();
 				foreach($field_value as $v1){					
 					$new_array[$v[$key]][$v1] = $v[$v1];
-				}
-				
+				}				
 				
 			}elseif($field_value==null){
 				$new_array[$v[$key]]  = $v;
