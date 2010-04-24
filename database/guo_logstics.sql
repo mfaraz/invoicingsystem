@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2010 年 04 月 23 日 15:33
+-- 生成日期: 2010 年 04 月 24 日 08:22
 -- 服务器版本: 5.0.45
 -- PHP 版本: 5.2.5
 
@@ -55,9 +55,6 @@ CREATE TABLE `members` (
 -- 导出表中的数据 `members`
 --
 
-INSERT INTO `members` (`member_id`, `member_name`, `mobile`, `phone`, `address`, `remarks`, `sex`, `qq`) VALUES
-(2, 'asdfa', '343', '434', '343', '3', 2, '34'),
-(3, '334', '4', '4343', '3', 'd', 2, '343');
 
 -- --------------------------------------------------------
 
@@ -168,7 +165,7 @@ CREATE TABLE `sale_detail` (
   PRIMARY KEY  (`detail_id`),
   KEY `main_id` (`main_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
 
 --
 -- 导出表中的数据 `sale_detail`
@@ -181,7 +178,12 @@ INSERT INTO `sale_detail` (`detail_id`, `main_id`, `product_id`, `quantity`, `pr
 (13, 49, 229, 1, 20.00),
 (14, 49, 215, 2, 30.00),
 (15, 49, 255, 1, 15.00),
-(16, 49, 268, 2, 2.00);
+(16, 49, 268, 2, 2.00),
+(17, 50, 255, 2, 12.50),
+(18, 50, 268, 2, 2.00),
+(19, 50, 259, 1, 8.00),
+(20, 50, 237, 1, 40.00),
+(21, 50, 241, 1, 30.00);
 
 -- --------------------------------------------------------
 
@@ -195,14 +197,15 @@ CREATE TABLE `sale_main` (
   `last_update_time` timestamp NOT NULL default CURRENT_TIMESTAMP,
   `remarks` varchar(200) NOT NULL,
   PRIMARY KEY  (`main_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=50 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=51 ;
 
 --
 -- 导出表中的数据 `sale_main`
 --
 
 INSERT INTO `sale_main` (`main_id`, `insert_date`, `last_update_time`, `remarks`) VALUES
-(49, '2010-04-23 00:00:00', '2010-04-23 21:14:36', '');
+(49, '2010-04-23 00:00:00', '2010-04-23 21:14:36', ''),
+(50, '2010-04-24 00:00:00', '2010-04-24 16:05:22', '');
 
 -- --------------------------------------------------------
 
