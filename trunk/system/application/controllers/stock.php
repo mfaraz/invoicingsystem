@@ -112,8 +112,9 @@
  		$this->db->join("stock_main as b","b.main_id=a.main_id","inner");
  		$this->db->join("product as c","c.product_id=a.product_id","inner");
  		$this->db->group_by('date(b.insert_date),a.product_id');
- 		$this->db->order_by("a.product_id","desc");
  		$this->db->order_by("date(b.insert_date)","asc");
+ 		$this->db->order_by("sum(a.quantity)","desc");
+ 		$this->db->order_by("a.product_id","desc");
  		$data = $this->mydb->getList();
  		$sort_array = array();
  		foreach($data['list'] as $k=>&$v){
@@ -136,8 +137,9 @@
  		$this->db->join("stock_main as b","b.main_id=a.main_id","inner");
  		$this->db->join("product as c","c.product_id=a.product_id","inner");
  		$this->db->group_by('concat(year(b.insert_date),\'-\',month(b.insert_date)),a.product_id');
- 		$this->db->order_by("a.product_id","desc");
  		$this->db->order_by("concat(year(b.insert_date),'',month(b.insert_date))","asc");
+ 		$this->db->order_by("sum(a.quantity)","desc");
+ 		$this->db->order_by("a.product_id","desc");
  		$data = $this->mydb->getList();
  		$sort_array = array();
  		foreach($data['list'] as $k=>&$v){
