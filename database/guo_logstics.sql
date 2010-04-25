@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2010 年 04 月 24 日 08:22
+-- 生成日期: 2010 年 04 月 25 日 10:14
 -- 服务器版本: 5.0.45
 -- PHP 版本: 5.2.5
 
@@ -49,10 +49,47 @@ CREATE TABLE `members` (
   `sex` tinyint(1) NOT NULL,
   `qq` varchar(12) NOT NULL,
   PRIMARY KEY  (`member_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- 导出表中的数据 `members`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `other_cost_detail`
+--
+
+CREATE TABLE `other_cost_detail` (
+  `detail_id` int(11) NOT NULL auto_increment,
+  `main_id` int(11) NOT NULL,
+  `price` decimal(20,2) NOT NULL,
+  `remarks` varchar(250) NOT NULL,
+  PRIMARY KEY  (`detail_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
+
+--
+-- 导出表中的数据 `other_cost_detail`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `other_cost_main`
+--
+
+CREATE TABLE `other_cost_main` (
+  `main_id` int(11) NOT NULL auto_increment,
+  `insert_date` date NOT NULL,
+  `last_update_time` timestamp NOT NULL default CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`main_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+
+--
+-- 导出表中的数据 `other_cost_main`
 --
 
 
@@ -165,7 +202,7 @@ CREATE TABLE `sale_detail` (
   PRIMARY KEY  (`detail_id`),
   KEY `main_id` (`main_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
 -- 导出表中的数据 `sale_detail`
@@ -197,7 +234,7 @@ CREATE TABLE `sale_main` (
   `last_update_time` timestamp NOT NULL default CURRENT_TIMESTAMP,
   `remarks` varchar(200) NOT NULL,
   PRIMARY KEY  (`main_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=51 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=52 ;
 
 --
 -- 导出表中的数据 `sale_main`
@@ -324,6 +361,18 @@ INSERT INTO `stock_main` (`main_id`, `insert_date`, `last_update_time`, `remarks
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `v_other_cost`
+--
+CREATE TABLE `v_other_cost` (
+`price` decimal(20,2)
+,`remarks` varchar(250)
+,`main_id` int(11)
+,`detail_id` int(11)
+,`insert_date` date
+);
+-- --------------------------------------------------------
+
+--
 -- Stand-in structure for view `v_storage`
 --
 CREATE TABLE `v_storage` (
@@ -332,6 +381,15 @@ CREATE TABLE `v_storage` (
 ,`quantity` bigint(20)
 ,`insert_date` date
 );
+-- --------------------------------------------------------
+
+--
+-- Structure for view `v_other_cost`
+--
+DROP TABLE IF EXISTS `v_other_cost`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `guo_logstics`.`v_other_cost` AS select `detail`.`price` AS `price`,`detail`.`remarks` AS `remarks`,`main`.`main_id` AS `main_id`,`detail`.`detail_id` AS `detail_id`,`main`.`insert_date` AS `insert_date` from (`guo_logstics`.`other_cost_detail` `detail` join `guo_logstics`.`other_cost_main` `main` on((`main`.`main_id` = `detail`.`main_id`)));
+
 -- --------------------------------------------------------
 
 --
