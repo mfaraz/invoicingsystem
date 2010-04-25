@@ -28,7 +28,7 @@ class Login extends Controller {
 		  
 		  if ($this->form_validation->run() == FALSE)
 		  {
-		 		$this->mypage->loadview("login");
+		 		$this->mypage->loadview("welcome,login,publisher");
 		  }
 		  else
 		  {		 
