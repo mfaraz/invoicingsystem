@@ -12,9 +12,6 @@
  		$this->load->model('Stockmodel');
  	}
  	
- 	function index(){
- 		echo 1;exit();
- 	}
  	
  	/**
  	 * 添加进货

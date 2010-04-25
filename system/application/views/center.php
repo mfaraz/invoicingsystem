@@ -1,10 +1,10 @@
 <div class="easyui-layout" style="width:100%;height:768px;margin:0;padding:0;">
 <div region="north" title="Easy Sale Helper v1.1" split="true" style="height:100px;padding:10px;">
 		
-		<h5>
+		<h5 >
 		<image src="<?php echo base_url();?>/images/world.png" >
 		<?php
-			echo anchor('login/center', '本系统中文名为“销售助手”,建议使用google浏览器使用本系统，如有商业需要，请联系QQ:150672834', array('title' => '点击返回主菜单'));
+			echo anchor('login/center', '本系统中文名为“销售助手”,建议使用google浏览器使用本系统，如有商业需要，请联系QQ:150672834', array('title' => '点击返回主菜单','style'=>'color:#333333;font-weight:lighter;'));
 		?>
 		</h5>
 
@@ -37,6 +37,8 @@
 					<p><?php  echo anchor('storage/storage_detail', '流转明细', array('title' => '流转明细','target'=>'__myframe',));?>&nbsp;</p>		
 				</div>
 				<div title="利润"  icon="icon-profit" style="padding:10px;">
+					<p><?php  echo anchor('profit/other_cost_add', '添加其他成本', array('title' => '其他成本','target'=>'__myframe',));?>&nbsp;</p>
+					<p><?php  echo anchor('profit/other_cost', '其他成本列表', array('title' => '其他成本','target'=>'__myframe',));?>&nbsp;</p>
 					<p><?php  echo anchor('profit/stat_by_date', '日统计', array('title' => '日统计','target'=>'__myframe',));?>&nbsp;</p>
 					<p><?php  echo anchor('profit/stat_by_year', '月统计', array('title' => '月统计','target'=>'__myframe',));?>&nbsp;</p>
 				</div>

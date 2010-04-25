@@ -4,6 +4,7 @@
 		<th>销售日期</th>	
 		<th>销售金额</th>
 		<th>销售成本</th>
+		<th>其他成本</th>
 		<th>利润</th>
 	</tr>	
 	<?php
@@ -13,6 +14,7 @@
 		<td><?php echo $v['insert_date'];?></td>
 		<td><?php echo $v['sale_price'];?></td>
 		<td><?php echo $v['costs'];?></td>
+		<td><?php echo $v['other_cost'];?></td>
 		<td><?php echo $v['profits'];?></td>
 	
 	</tr>

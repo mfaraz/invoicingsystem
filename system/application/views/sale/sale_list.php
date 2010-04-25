@@ -33,7 +33,7 @@ echo form_open("sale/sale_list",$attr);?>
 		<th>日期</th>
 		<th>件数</th>
 		<th>销售额</th>
-		<th>利润</th>
+		<th>销售盈利</th>
 		<th>备注</th>
 		<th>操作</th>
 	</tr>
