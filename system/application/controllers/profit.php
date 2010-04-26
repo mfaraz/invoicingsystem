@@ -16,7 +16,7 @@
 	 * 按日统计
 	 */
 	function stat_by_date(){
-		$this->db->select('sum(d.price) as other_cost,a.*,date(b.insert_date) as insert_date,sum(a.quantity*c.product_price) as costs,sum(a.quantity*a.product_price) as sale_price,(sum(a.quantity*(a.product_price-c.product_price))-sum(d.price)) as profits',false);
+		$this->db->select('sum(d.price) as other_cost,a.*,date(b.insert_date) as insert_date,sum(a.quantity*c.product_price) as costs,sum(a.quantity*a.product_price) as sale_price,(sum(a.quantity*(a.product_price-c.product_price))-ifnull(sum(d.price),0)) as profits',false);
 		$this->db->from('sale_detail as a ');
 		$this->db->join('sale_main as b','a.main_id=b.main_id');
 		$this->db->join('product as c','c.product_id=a.product_id');
@@ -30,7 +30,7 @@
 	 * 按年统计
 	 */
 	function stat_by_year(){		
-		$this->db->select('d.price as other_cost,concat(year(b.insert_date),\'-\',month(b.insert_date)) as year_month_string,sum(a.quantity*c.product_price) as costs,sum(a.quantity*a.product_price) as sale_price,(sum(a.quantity*(a.product_price-c.product_price))-d.price) as profits',false);
+		$this->db->select('d.price as other_cost,concat(year(b.insert_date),\'-\',month(b.insert_date)) as year_month_string,sum(a.quantity*c.product_price) as costs,sum(a.quantity*a.product_price) as sale_price,(sum(a.quantity*(a.product_price-c.product_price))-ifnull(d.price,0)) as profits',false);
 		$this->db->from('sale_detail as a ');
 		$this->db->join('sale_main as b','a.main_id=b.main_id');
 		$this->db->join('product as c','c.product_id=a.product_id');
