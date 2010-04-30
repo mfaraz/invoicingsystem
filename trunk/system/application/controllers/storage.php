@@ -19,7 +19,16 @@
  		$this->db->select("sum(if(type=1,quantity,0)) as in_quantity,sum(if(type=2,-quantity,0)) as out_quantity,b.product_real_name,b.product_name,b.product_price,a.product_id,sum(a.quantity) as  quantity ",false);
  		$this->db->from('v_storage as a ');
  		$this->db->join('product as b','a.product_id=b.product_id','inner');
+ 		$product_name = $this->input->get('product_name');
+ 		$product_id = $this->input->get('product_id');
+ 		if($product_id>0){
+ 			$this->db->where("b.product_id",$product_id);
+ 		}
+ 		if($product_name>0){
+ 			$this->db->like("b.product_name",$product_name);
+ 		}
  		$this->db->group_by('a.product_id');	
+ 		$this->db->order_by('sum(a.quantity)','asc');	
  		$this->db->order_by('a.product_id','desc');	
  		$data  =  $this->mydb->getList(); 	
  		$this->mypage->loadview('storage/stat',$data);

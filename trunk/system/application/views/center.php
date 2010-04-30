@@ -41,6 +41,7 @@
 					<p><?php  echo anchor('profit/other_cost', '其他成本列表', array('title' => '其他成本','target'=>'__myframe',));?>&nbsp;</p>
 					<p><?php  echo anchor('profit/stat_by_date', '日统计', array('title' => '日统计','target'=>'__myframe',));?>&nbsp;</p>
 					<p><?php  echo anchor('profit/stat_by_year', '月统计', array('title' => '月统计','target'=>'__myframe',));?>&nbsp;</p>
+					<p><?php  echo anchor('profit/stat_by_product', '产品利润统计', array('title' => '产品利润统计','target'=>'__myframe',));?>&nbsp;</p>
 				</div>
 				<div title="VIP会员"  icon="icon-uesrs" style="padding:10px;">
 					<p><?php  echo anchor('members/member_add', '添加会员', array('title' => '添加会员','target'=>'__myframe',));?>&nbsp;</p>

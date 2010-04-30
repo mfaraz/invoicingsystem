@@ -1,4 +1,22 @@
-	<div class="mytheme1" align="left" >库存统计</div>
+<div class="mytheme1" align="left" >库存统计</div>	
+<?php
+$attr  = array('method'=>'get');
+echo form_open("storage/storage_stat",$attr);?>
+<table  align="center" class="table_search" >
+<tr>
+	<td>
+	请输入产品编号：
+	</td>
+	<td>
+	<input type="hidden" name="product_id"  class="auto_id" value="<?php echo $_GET['product_id']; ?>" />
+	<input type="text" name="product_name" onfocus="autocomplete_load(this)"   value="<?php echo set_value(null,$_GET['product_name']); ?>"/>
+	</td>	
+	<td>
+		<?php echo form_submit("submit","查询"); ?>
+	</td>
+</tr>
+</table>
+<?php echo  form_close();?>
 <table class="mytable">
 <tr>
 	<th>产品</th>

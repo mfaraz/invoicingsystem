@@ -26,8 +26,7 @@
 	<tr class="tr_center">
 		<td</td>
 		<td></td>
-		<td></td>
-		<td>合计</td>
+		<td class="right">金额合计：</td>
 		<td><?php echo $total['price'];?></td>		
 	</tr>
 </table>
