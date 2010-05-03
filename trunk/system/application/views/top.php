@@ -3,6 +3,7 @@
 <head> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
 <title>进销存系统1.0</title> 
+<meta http-equiv="pragma" content="no-cache">
 <?php echo $header_html['css'];?>
 <?php echo $header_html['js'];?>
 </head>  
