@@ -48,6 +48,7 @@
 					<p><?php  echo anchor('members/member_list', '管理会员', array('title' => '管理会员','target'=>'__myframe',));?>&nbsp;</p>
 				</div>
 				<div title="系统设置"  icon="icon-system" style="padding:10px;">
+					<p><?php  echo anchor('system_manage/db_backup', '备份数据库', array('title' => '备份数据库','target'=>'__myframe',));?>&nbsp;</p>
 					<p><?php  echo anchor('system_manage/change_password', '修改密码', array('title' => '修改密码','target'=>'__myframe',));?>&nbsp;</p>
 					<p><?php  echo anchor('system_manage/exit_system', '退出系统', array('title' => '退出系统','target'=>'_parent'));?>&nbsp;</p>
 				</div>	

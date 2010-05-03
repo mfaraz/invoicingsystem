@@ -77,7 +77,26 @@ class System_manage extends Controller{
  		}
  	}
  	
+ 	/**
+ 	 * 备份数据库
+ 	 */
+ 	function db_backup(){
+ 		try{
+ 			$this->load->dbutil();
+ 			$this->dbutil->backup();
+ 			$backup = $this->load->helper('download');
+			force_download('ci_app_db'.date("Ymd").'.rar', $backup); 
+ 			//$this->mypage->redirectWithInfo('system_manage/db_backup','修改成功，需要重新登陆系统'); 			
+ 		}catch(Exception $e){
+ 			show_error($e->getMessage());
+ 		}	
+ 		
+ 	}	
  	
+ 	
+ 	
+ 	
+
 	
 }
  
