@@ -11,6 +11,7 @@
 <table align="center" class="mytable">
 	<tr>
 		<th>产品</th>
+		<th>成本价</th>
 		<th>单价</th>
 		<th>数量</th>
 		<th>金额</th>		
@@ -18,12 +19,14 @@
 	<?php foreach($detail as $v):?>
 	<tr class="tr_center">
 		<td><?php echo $v['product_name'];?></td>
+		<td><?php echo $v['cost'];?></td>
 		<td><?php echo $v['product_price'];?></td>
 		<td><?php echo $v['quantity'];?></td>
 		<td><?php echo $v['sum_price'];?></td>		
 	</tr>
 	<?php endforeach;?>
 	<tr class="tr_center">
+		<td></td>
 		<td></td>
 		<td></td>
 		<td>合计</td>
