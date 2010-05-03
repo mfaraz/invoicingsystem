@@ -51,7 +51,7 @@
 	 			$detail = $this->Stockmodel->reDefine($detail);	 			
 	 			$form_info['detail'] = $detail;	
 	 			$this->mydb->save($form_info,$this->Stockmodel->saveConfig());
-	 			redirect("stock/stock_list"); 			
+	 			$this->mypage->jsRedirect("提交成功",site_url("/stock/stock_list"));			
 	 		}
 	 			
  		}catch(Exception $e){
@@ -94,7 +94,7 @@
  		try{
  			$id = $this->uri->segment(3);
  			$this->mydb->delete($id,$this->Stockmodel->saveConfig());
- 			redirect("stock/stock_list");
+ 			$this->mypage->jsRedirect("删除成功",site_url("/stock/stock_list"));			
  		}catch(Exception $e){
  			show_error($e->getMessage());
  		}	

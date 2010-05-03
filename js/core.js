@@ -119,3 +119,16 @@ $(function() {
 
 	
 	
+//提示信息
+function show_msg(msg){				
+	$.messager.show({
+			title:'提示信息',
+			msg:msg,
+			timeout:3000,
+			showType:'slide'
+		});
+		
+}
+
+	
+	

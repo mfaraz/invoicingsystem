@@ -105,6 +105,15 @@ class Mypage{
 	}
 	
 	/**
+	 * js跳转 
+	 */
+	function jsRedirect($msg,$url){
+		echo "<script language='javascript'>parent.show_msg('$msg');location.replace('$url');</script>";
+		exit();
+	}
+	
+	
+	/**
 	 * 数组转成url
 	 */
 	function arrayToUrl($array){			
