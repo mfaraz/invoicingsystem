@@ -83,10 +83,12 @@ class System_manage extends Controller{
  	function db_backup(){
  		try{
  			$this->load->dbutil();
- 			$this->dbutil->backup();
- 			$backup = $this->load->helper('download');
-			force_download('ci_app_db'.date("Ymd").'.rar', $backup); 
- 			//$this->mypage->redirectWithInfo('system_manage/db_backup','修改成功，需要重新登陆系统'); 			
+ 			$backup = $this->dbutil->backup();
+ 			$this->load->helper('file');
+ 			$file_name = 'ci_app_db'.date("Ymd").'.gz';
+			write_file(BASEPATH.'../backup/'.$file_name, $backup); 			
+ 			$this->load->helper('download');
+			force_download($file_name, $backup); 
  		}catch(Exception $e){
  			show_error($e->getMessage());
  		}	
