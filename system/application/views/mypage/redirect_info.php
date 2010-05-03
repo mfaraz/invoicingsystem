@@ -4,5 +4,5 @@
 	</div>
 </center>
 <script language="javascript">
-	redirect("<?php echo site_url($url);?>");
+	redirect("<?php echo site_url($url);?>","<?php echo $target;?>");
 </script>

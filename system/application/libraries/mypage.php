@@ -99,8 +99,8 @@ class Mypage{
 	/**
 	 * 跳转
 	 */
-	function redirectWithInfo($url,$msg){		
-		$data = array('url'=>$url,'msg'=>$msg);
+	function redirectWithInfo($url,$msg,$target='parent'){		
+		$data = array('url'=>$url,'msg'=>$msg,'target'=>$target);
 		$this->loadview('mypage/redirect_info',$data);			
 	}
 	
