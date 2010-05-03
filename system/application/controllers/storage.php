@@ -29,6 +29,7 @@
  		}
  		$this->db->group_by('a.product_id');	
  		$this->db->order_by('sum(a.quantity)','asc');	
+ 		$this->db->order_by('out_quantity','desc');	
  		$this->db->order_by('a.product_id','desc');	
  		$data  =  $this->mydb->getList(); 	
  		$this->mypage->loadview('storage/stat',$data);

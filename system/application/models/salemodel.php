@@ -97,7 +97,7 @@
  	
  	function sale_detail($main_id){
  		$this->db->where('detail.main_id',$main_id);
- 		$this->db->select('(detail.product_price*detail.quantity) as sum_price,product.product_name,product.product_real_name,main.insert_date,main.remarks,detail.*',false);
+ 		$this->db->select('product.product_price as cost,(detail.product_price*detail.quantity) as sum_price,product.product_name,product.product_real_name,main.insert_date,main.remarks,detail.*',false);
  		$this->db->from('sale_detail as detail');
  		$this->db->join('sale_main as main','main.main_id=detail.main_id','inner');
  		$this->db->join('product','product.product_id=detail.product_id','inner');
