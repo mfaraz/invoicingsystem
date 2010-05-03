@@ -47,6 +47,11 @@
 					<p><?php  echo anchor('members/member_add', '添加会员', array('title' => '添加会员','target'=>'__myframe',));?>&nbsp;</p>
 					<p><?php  echo anchor('members/member_list', '管理会员', array('title' => '管理会员','target'=>'__myframe',));?>&nbsp;</p>
 				</div>
+				<div title="辅助工具"  icon="icon-system" style="padding:10px;">
+					<p><?php  echo anchor('assist/calendar', 'google日历', array('title' => 'google日历','target'=>'__myframe',));?>&nbsp;</p>
+				</div>	
+				
+				
 				<div title="系统设置"  icon="icon-system" style="padding:10px;">
 					<p><?php  echo anchor('system_manage/db_backup', '备份数据库', array('title' => '备份数据库','target'=>'__myframe',));?>&nbsp;</p>
 					<p><?php  echo anchor('system_manage/change_password', '修改密码', array('title' => '修改密码','target'=>'__myframe',));?>&nbsp;</p>
