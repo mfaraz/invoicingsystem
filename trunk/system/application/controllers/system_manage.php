@@ -85,7 +85,7 @@ class System_manage extends Controller{
  			$this->load->dbutil();
  			$backup = $this->dbutil->backup();
  			$this->load->helper('file');
- 			$file_name = 'ci_app_db'.date("Y-m-d H:i:s").'.gz';
+ 			$file_name = 'ci_app_db'.date("Y-m-d-H-i-s").'.gz';
 			write_file(BASEPATH.'../backup/'.$file_name, $backup); 	
 			//发往email
 			$this->load->library('email');
