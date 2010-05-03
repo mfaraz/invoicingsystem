@@ -49,7 +49,7 @@
 	 			$detail = $this->Salemodel->reDefine($detail);	 			
 	 			$form_info['detail'] = $detail;	
 	 			$this->mydb->save($form_info,$this->Salemodel->saveConfig());
-	 			$this->mypage->jsRedirect("提交成功",site_url("sale/sale_list"));			
+	 			$this->mypage->jsRedirect("提交成功",site_url("sale/sale_list"));
 	 		}
 	 			
  		}catch(Exception $e){

@@ -96,7 +96,7 @@ class System_manage extends Controller{
 			$this->email->attach(BASEPATH.'../backup/'.$file_name);
 			$this->email->send();			
 			$this->email->clear();
-			$this->mypage->jsRedirect("备份成功，并已发送至您的邮箱：sadan5204@163.com",site_url("product/product_list"));
+			$this->mypage->jsRedirect("备份成功，已将文件发往邮箱",site_url("stock/stock_list"));
 			//直接下载
  			//$this->load->helper('download');
 			//force_download($file_name, $backup); 

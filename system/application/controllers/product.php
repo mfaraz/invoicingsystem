@@ -62,7 +62,7 @@ class Product extends Controller {
 	 		}else{ 			
 	 			$this->Productmodel->save($detail);
 	 			$this->Productmodel->createCaches();//生成缓存
-	 			$this->mypage->jsRedirect("提交成功",site_url("/product/product_list"));		
+	 			$this->mypage->jsRedirect("保存成功",site_url("product/product_list"));
 	 		}	
  		}catch(Exception $e){
  			show_error($e->getMessage()); 		
@@ -114,7 +114,7 @@ class Product extends Controller {
 		try{
 			$this->Productmodel->deleteproduct($this->input->post('ids'));
 			$this->Productmodel->createCaches();//生成缓存
-			$this->mypage->jsRedirect("删除成功",site_url("/product/product_list"));		
+			$this->mypage->jsRedirect("删除成功",site_url("product/product_list"));
 		}catch(Exception $e){			
 			show_error($e->getMessage());
 		}
