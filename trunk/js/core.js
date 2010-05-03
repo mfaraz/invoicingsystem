@@ -49,8 +49,12 @@ function autocomplete_load(obj){
 /**
  * 跳转
  */
-function redirect(url){	
-	setTimeout(function(){parent.location.href=url},3000);
+function redirect(url,target){	
+	if(target=='self'){
+		setTimeout(function(){self.location.href=url},3000);
+	}else{
+		setTimeout(function(){parent.location.href=url},3000);
+	}
 
 }
 

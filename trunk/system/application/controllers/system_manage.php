@@ -86,9 +86,20 @@ class System_manage extends Controller{
  			$backup = $this->dbutil->backup();
  			$this->load->helper('file');
  			$file_name = 'ci_app_db'.date("Ymd").'.gz';
-			write_file(BASEPATH.'../backup/'.$file_name, $backup); 			
- 			$this->load->helper('download');
-			force_download($file_name, $backup); 
+			write_file(BASEPATH.'../backup/'.$file_name, $backup); 	
+			//发往email
+			$this->load->library('email');
+			$this->email->from('conqweal@163.com');		
+			$this->email->to('sadan5204@163.com,conqweal@163.com');		
+			$this->email->subject("数据备份".$file_name);
+			$this->email->message("数据备份".$file_name);
+			$this->email->attach(BASEPATH.'../backup/'.$file_name);
+			$this->email->send();			
+			$this->email->clear();
+			$this->mypage->redirectWithInfo('product/product_list','备份数据已经发往您的email：sadan5204@163.com','self');
+			//直接下载
+ 			//$this->load->helper('download');
+			//force_download($file_name, $backup); 
  		}catch(Exception $e){
  			show_error($e->getMessage());
  		}	
