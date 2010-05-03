@@ -35,6 +35,7 @@ class Product extends Controller {
  		$data = $this->mydb->getList(); 
  		$this->mypage->getHeaderCss('sexybuttons');
  		$this->mypage->getHeaderJs('/item/product_list');
+ 		$data['save_ok'] = $this->input->get('save_ok');
  		$this->mypage->loadview('product/product_list',$data);
  		
  	}
@@ -43,9 +44,7 @@ class Product extends Controller {
  	 * 保存产品
  	 */
  	function product_save(){
- 		try{	
-	 		
-	 	
+ 		try{		 	
 	 		$detail = null;  				
 	 		$detail =  $this->myform->regroupFormData($this->input->post("detail"));
 	 		$config = $this->Productmodel->setConfigRules($detail);
@@ -63,9 +62,7 @@ class Product extends Controller {
 	 		}else{ 			
 	 			$this->Productmodel->save($detail);
 	 			$this->Productmodel->createCaches();//生成缓存
-	 			redirect('/product/product_list/', 'refresh');
-		
-	 			
+	 			$this->mypage->jsRedirect("提交成功",site_url("/product/product_list"));		
 	 		}	
  		}catch(Exception $e){
  			show_error($e->getMessage()); 		
@@ -117,7 +114,7 @@ class Product extends Controller {
 		try{
 			$this->Productmodel->deleteproduct($this->input->post('ids'));
 			$this->Productmodel->createCaches();//生成缓存
-			redirect("product/product_list");
+			$this->mypage->jsRedirect("删除成功",site_url("/product/product_list"));		
 		}catch(Exception $e){			
 			show_error($e->getMessage());
 		}
