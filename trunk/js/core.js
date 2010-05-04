@@ -129,15 +129,3 @@ function show_msg(msg){
 		});
 		
 }
-
-function add_msg(msg){
-	if($('.show_msg').size()>0){
-		$('.show_msg').append(msg);
-	}else{
-		var html = '<div class="show_msg">'+msg+'</div>';
-		$(document.body).append(html);
-	}
-	
-}
-	
-	
