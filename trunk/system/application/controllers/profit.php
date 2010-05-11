@@ -51,7 +51,7 @@
 		$this->db->join('sale_main as b','a.main_id=b.main_id');
 		$this->db->join('product as c','c.product_id=a.product_id');		
 		$this->db->group_by('c.product_id');
-		$this->db->order_by('sale_quantity','desc');
+		$this->db->order_by('profits','desc');
 		$this->mypage->loadview('profit/stat_by_product',$this->mydb->getlist());	
 	}
 	
