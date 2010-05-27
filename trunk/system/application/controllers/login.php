@@ -67,10 +67,14 @@ class Login extends Controller {
  
 	//验证密码
 	function user_pass_check($str)
-	{		
-		$db_temp = $this->db->select('admin_pass',false)->from('admins')->where('admin_user',$this->input->post('admin_user'))->get()->result_array();
-		$admin_pass = $db_temp[0]['admin_pass'];			
-		$de_str = $this->encrypt->decode($admin_pass);	
+	{
+		$db_temp = $this->db->select('admin_pass',false)->from('admins')->where('admin_user',$this->input->post('user_name'))->get()->result_array();
+		$admin_pass = $db_temp[0]['admin_pass'];
+		if(empty($admin_pass)) {
+			$this->form_validation->set_message('user_pass_check','');
+			return false;
+		}
+		$de_str = $this->mypage->myEncrypt($admin_pass,"decode");	
 		if ($str != $de_str)
 		{
 			$this->form_validation->set_message('user_pass_check',' %s 输入错误');
