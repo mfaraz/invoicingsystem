@@ -16,7 +16,9 @@
 	<th width="80">操作</th>
 </tr>
 
-<?foreach($detail as $k=>$v):?>
+<?php 
+foreach($detail as $k=>$v):?>
+
 <tr class="tr_center">
 
 	<td>
@@ -36,6 +38,7 @@
 		
 	 </td> 
 </tr>
+
 <?php 
 	endforeach;
 ?>
