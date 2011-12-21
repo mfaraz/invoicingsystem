@@ -31,7 +31,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`admin_id`, `admin_user`, `admin_pass`) VALUES
-(1, 'admin', 'DQoIDA0K');
+(1, 'admin', '3efcRidVt98s+GGy7zxCuL3GTkqhAWqpSDbFwoqZPubfkhs');
 
 -- --------------------------------------------------------
 
@@ -68,7 +68,7 @@ CREATE TABLE `other_cost_detail` (
   `price` decimal(20,2) NOT NULL,
   `remarks` varchar(250) NOT NULL,
   PRIMARY KEY  (`detail_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- 导出表中的数据 `other_cost_detail`
@@ -86,7 +86,7 @@ CREATE TABLE `other_cost_main` (
   `insert_date` date NOT NULL,
   `last_update_time` timestamp NOT NULL default CURRENT_TIMESTAMP,
   PRIMARY KEY  (`main_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- 导出表中的数据 `other_cost_main`
