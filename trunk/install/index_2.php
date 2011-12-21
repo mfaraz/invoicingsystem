@@ -5,7 +5,6 @@
 		  Email: conqweal@163.com
 		  Author: conqweal		
 		  --------------------------------------------------*/
-
 		@set_time_limit(300);
 		extract($_POST);		
         header("Content-Type:text/html;charset=UTF-8");
@@ -21,7 +20,7 @@
 				mysql_select_db(CFG_DB_NAME);
 				mysql_query("set names 'utf8' ");
 				//mysql_query("DROP DATABASE  guo_logstics");
-				mysql_query("CREATE DATABASE  guo_logstics ");				
+				mysql_query("drop database if exists guo_logstics; CREATE DATABASE `guo_logstics` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci; ");				
 				$query = mysql_query('show tables from '.CFG_DB_NAME,$connect); 
 				while($row = mysql_fetch_array($query)&&substr($row[0],0,2) != 'v_') {	
 					mysql_query("TRUNCATE TABLE `".$row[0]."`;") ;	
