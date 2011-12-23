@@ -24,9 +24,10 @@
 	</tr>
 	<?php endforeach;?>
 	<tr class="tr_center">
-		<td</td>
-		<td></td>
-		<td class="right">金额合计：</td>
+		
+		
+	
+		<td class="right" colspan="3">金额合计：</td>
 		<td><?php echo $total['price'];?></td>		
 	</tr>
 </table>

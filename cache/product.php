@@ -657,4 +657,11 @@
     'product_real_name' => '家和万事兴',
     'product_price' => '22.00',
   ),
+  296 => 
+  array (
+    'product_id' => '296',
+    'product_name' => 'abcd',
+    'product_real_name' => 'abcd',
+    'product_price' => '11.00',
+  ),
 );?>
