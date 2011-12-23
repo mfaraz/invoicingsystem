@@ -35,7 +35,7 @@ function core_drop(obj,extend_fn){
 /**
  * auto complete
  */		
-function autocomplete_load(obj){
+function autocomplete_load_org(obj){
 		$(obj).next(".combobox").remove();
 		$(obj).combobox({
 			url:$('#sys_base_url').html()+'js/cache/product.json',
@@ -45,6 +45,48 @@ function autocomplete_load(obj){
 		});	
 	
 }
+
+
+		
+		
+function autocomplete_load(obj){
+		jQuery(obj).autocomplete({		
+			url: $('#sys_base_url').html()+'/index.php/product/product_search?1=1&product_name='+obj.val(),
+			
+			sortFunction: function(a, b, filter) {			
+				var f = filter.toLowerCase();
+				var fl = f.length;
+				var a1 = a.value.toLowerCase().substring(0, fl) == f ? '0' : '1';
+				var a1 = a1 + String(a.data[0]).toLowerCase();
+				var b1 = b.value.toLowerCase().substring(0, fl) == f ? '0' : '1';
+				var b1 = b1 + String(b.data[0]).toLowerCase();
+				if (a1 > b1) {
+					return 1;
+				}
+				if (a1 < b1) {
+					return -1;
+				}
+				return 0;
+			},
+			showResult: function(value, data) {
+				return '<span style="color:red">' + value + '</span>';
+			},
+			onItemSelect: function(item) {		
+				obj.prev("input").val(item.data).trigger('change');
+			},
+			onNoMatch:function(){
+				obj.prev("input").val('').trigger("change");
+				obj.val('');
+			},
+			
+			
+			
+			maxItemsToShow: 50
+	  });
+		
+}
+
+
 
 /**
  * 跳转

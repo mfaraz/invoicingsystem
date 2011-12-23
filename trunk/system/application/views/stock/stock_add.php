@@ -27,7 +27,7 @@
 		 
 		  <tr class="tr_center"><td>
 				<input type="hidden" id="product_id"  class="auto_id" name="detail[product_id][<?php echo $k;?>]" value="<?php echo set_value("detail[product_id][$k]",$v['product_id']);?>" onchange="ajax_product($(this));">
-				<input  id="product_name" name="<?php echo "detail[product_name][$k]";?>" style="width:200px;"  onfocus="autocomplete_load(this)"  value="<?php echo set_value("detail[product_name][$k]",$v['product_name']);?>" /> 
+				<input  id="product_name" name="<?php echo "detail[product_name][$k]";?>" style="width:200px;"      value="<?php echo set_value("detail[product_name][$k]",$v['product_name']);?>" /> 
 				<?php echo form_error("detail[product_id][$k]",'<div id="error_span" class="red_font">','</div>'); ?>
 				<?php echo form_error("detail[product_name][$k]",'<div id="error_span" class="red_font">','</div>'); ?>
 		 </td>
@@ -94,12 +94,11 @@
  echo form_fieldset_close();
  ?>
 
-<script language="javascript">
-	
+<script language="javascript">	
 		
 	//复制扩展
 	function  copy_extend(obj){
-		
+		autocomplete_load(obj.parents("tr:first").find('#product_name'));
 	} 
 	
 	 //取产品信息
@@ -116,7 +115,17 @@
 		 	parent.find('#product_real_name').attr('readonly','true').val(json.product_real_name);
 		});		 
 	}
+
 	
+	//默认挂载	
+	$(document).ready(function(){	
+		$("input[id='product_name']").each(function(){
+			autocomplete_load($(this));	
+			
+		})	
+	})
+	
+
 	
 	
 </script> 

@@ -42,7 +42,7 @@
 		 </td> 
 		 
 		  <td>	
-		  	<a href="javascript:;"  target="_self" onclick="core_copy($(this),'#product_id,#quantity,#product_name,#detail_id','copy_extend')" class="link_add">&nbsp;</a>
+		  	<a href="javascript:;"  target="_self" onclick="core_copy($(this),'#product_id,#quantity,#product_name,#product_real_name,#detail_id','copy_extend')" class="link_add">&nbsp;</a>
 			<a href="javascript:;"  id="delete_link"  class="link_del  <?php if($k==0):?>hide<?php endif;?>"    target="_self" onclick="core_drop($(this))" >&nbsp;</a>
 		
 			<input type="hidden" name="detail[main_id][<?php echo $k;?>]" id='detail_main_id' value="<?php echo set_value("detail[main_id][$k]",$v['main_id']); ?>">
@@ -109,7 +109,7 @@
 		
 	//复制扩展
 	function  copy_extend(obj){
-		
+		autocomplete_load(obj.parents("tr:first").find('#product_name'));
 	} 
 	
 	 //取产品信息
@@ -125,7 +125,13 @@
 		});		 
 	}
 	
-	
+	//默认挂载	
+	$(document).ready(function(){	
+		$("input[id='product_name']").each(function(){
+			autocomplete_load($(this));	
+			
+		})	
+	})
 	
 </script> 
 
