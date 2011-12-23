@@ -40,6 +40,19 @@ class Product extends Controller {
  		
  	}
  	
+ 	/* 修改产品
+	 */
+ 	function product_search(){   	
+ 		$data = $this->db->select('product_id,product_name,product_real_name')->from("product")->like("product_name",$this->input->get("product_name"),'after')->order_by("product_id","desc")->get()->result_array();
+ 		foreach($data as $row){
+ 			echo $row['product_name'].'|'.$row['product_id']."\n"; 			
+ 		}
+ 		exit();
+
+ 	}
+ 	
+ 	
+ 	
  	/**
  	 * 保存产品
  	 */
