@@ -29,12 +29,12 @@
 	/**
 	 * 按年统计
 	 */
-	function stat_by_year(){		
+	function stat_by_year(){	
 		$this->db->select('d.price as other_cost,concat(year(b.insert_date),\'-\',month(b.insert_date)) as year_month_string,sum(a.quantity*c.product_price) as costs,sum(a.quantity*a.product_price) as sale_price,(sum(a.quantity*(a.product_price-c.product_price))-ifnull(d.price,0)) as profits',false);
 		$this->db->from('sale_detail as a ');
 		$this->db->join('sale_main as b','a.main_id=b.main_id');
 		$this->db->join('product as c','c.product_id=a.product_id');
-		$this->db->join('(select insert_date,sum(price) as price from v_other_cost  group by year(insert_date),\'-\',month(insert_date)) as d','concat(year(d.insert_date),\'-\',month(d.insert_date))=concat(year(b.insert_date),\'-\',month(b.insert_date))','left');
+		$this->db->join('(select e.insert_date,sum(e.price) as price from '.$this->db->dbprefix.'v_other_cost as e  group by year(e.insert_date),\'-\',month(e.insert_date)) as d','concat(year(d.insert_date),\'-\',month(d.insert_date))=concat(year(b.insert_date),\'-\',month(b.insert_date))','left');
 		$this->db->group_by('concat(year(b.insert_date),\'-\',month(b.insert_date))');
 		$this->db->order_by('concat(year(b.insert_date),\'-\',month(b.insert_date))');
 		$this->mypage->loadview('profit/stat_by_year',$this->mydb->getlist());	

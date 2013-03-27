@@ -11,7 +11,7 @@
 |	http://example.com/
 |
 */
-$config['base_url']	= "http://localhost/ci_logistic/";
+$config['base_url']	= "http://localhost/ci_app/";
 
 /*
 |--------------------------------------------------------------------------
@@ -329,8 +329,8 @@ $config['proxy_ips'] = '';
 /* Location: ./system/application/config/config.php */
 
  //默认加载样式
-$config['default_css'] = array('table','themes/default/easyui','themes/default/combobox','themes/icon','jquery_ui/base/jquery.ui.all','style','autocomplete/jquery.autocomplete');
+$config['default_css'] = array('table','themes/default/easyui','themes/default/combobox','themes/icon','jquery_ui/base/jquery.ui.all','style','autocomplete/jquery.autocomplete','thickbox');
 //默认加载js
-$config['default_js'] = array('jquery-1.4.2.min','jquery.easyui.min','jquery_ui/jquery.ui.core','jquery_ui/jquery.ui.widget','jquery_ui/jquery.ui.datepicker','core','autocomplete/jquery.autocomplete');
+$config['default_js'] = array('jquery-1.4.2.min','jquery.easyui.min','jquery_ui/jquery.ui.core','jquery_ui/jquery.ui.widget','jquery_ui/jquery.ui.datepicker','core','autocomplete/jquery.autocomplete','thickbox-compressed');
 //per page
 $config['per_page'] = '15';
