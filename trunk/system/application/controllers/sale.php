@@ -64,15 +64,16 @@
  	 */
  	function sale_list(){ 		
  		$data = null;
- 		if($this->input->get('insert_date'))	$this->db->where('sale_main.insert_date',$this->input->get('insert_date'));
- 		$this->db->like('product.product_name',$this->input->get('product_name'));
- 		$this->db->like('product.product_real_name',$this->input->get('product_real_name'));
- 		$this->db->select('sale_detail.main_id,sum(sale_detail.quantity*sale_detail.product_price) as price,sum(sale_detail.quantity*(sale_detail.product_price-product.product_price)) as profit,count(distinct sale_detail.product_id) as p_count,date(sale_main.insert_date) as insert_date,sale_main.remarks')
- 		->from('sale_detail') 
- 		->join('sale_main','sale_main.main_id=sale_detail.main_id','inner') 
- 		->join('product','sale_detail.product_id=product.product_id','inner')
- 		->group_by('sale_detail.main_id')
- 		->order_by('sale_detail.main_id','desc');
+ 		
+ 		$this->db->select('a.main_id,sum(a.quantity*a.product_price) as price,sum(a.quantity*(a.product_price-c.product_price)) as profit,count(distinct a.product_id) as p_count,date(b.insert_date) as insert_date,b.remarks',false)
+ 		->from('sale_detail as a') 
+ 		->join('sale_main as b','b.main_id=a.main_id','inner') 
+ 		->join('product as c','a.product_id=c.product_id','inner')
+ 		->group_by('a.main_id')
+ 		->order_by('a.main_id','desc');
+		if($this->input->get('insert_date'))	$this->db->where('b.insert_date',$this->input->get('insert_date'));
+ 		$this->db->like('c.product_name',$this->input->get('product_name'));
+ 		$this->db->like('c.product_real_name',$this->input->get('product_real_name'));
  		$data  =  $this->mydb->getList(); 	
  		$this->mypage->loadview('sale/sale_list',$data);
  	}

@@ -39,10 +39,10 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = "localhost";
 $db['default']['username'] = "root";
-$db['default']['password'] = "";
-$db['default']['database'] = "guo_logstics";
+$db['default']['password'] = "root";
+$db['default']['database'] = "ins_db";
 $db['default']['dbdriver'] = "mysql";
-$db['default']['dbprefix'] = "";
+$db['default']['dbprefix'] = "ins_";
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;
 $db['default']['cache_on'] = FALSE;

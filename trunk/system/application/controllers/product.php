@@ -28,10 +28,11 @@ class Product extends Controller {
 	/**
 	 * 修改产品
 	 */
- 	function product_list(){   		 	 	
- 		$this->db->like("product_name",$this->input->get("product_name"));
+ 	function product_list(){  		 	 	
+ 		
+ 		$this->db->select('*',false)->from("product")->order_by("product_id","desc");
+		$this->db->like("product_name",$this->input->get("product_name"));
  		$this->db->like("product_real_name",$this->input->get("product_real_name"));
- 		$this->db->select('*')->from("product")->order_by("product_id","desc");
  		$data = $this->mydb->getList(); 
  		$this->mypage->getHeaderCss('sexybuttons');
  		$this->mypage->getHeaderJs('/item/product_list');
@@ -91,7 +92,7 @@ class Product extends Controller {
  		$detail = $this->input->post('detail');
  		$key = str_replace(array('detail[product_name][',']'),array('',''),$param);
  		$product_id = $detail['product_id'][$key]; 	
- 		$sql = 'select count(1) as flag from product where product_id!=? and product_name=?';
+ 		$sql = 'select count(1) as flag from '.$this->db->dbprefix.'product where product_id!=? and product_name=?';
  		$row = $this->db->query($sql,array($product_id,trim($str)))->row_array();
  		if($row['flag']>0){ 	 			
  			$this->form_validation->set_message('product_name_check','对不起,%s已经存在');

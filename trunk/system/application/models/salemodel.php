@@ -96,12 +96,13 @@
  	}
  	
  	function sale_detail($main_id){
- 		$this->db->where('detail.main_id',$main_id);
- 		$this->db->select('product.product_price as cost,(detail.product_price*detail.quantity) as sum_price,product.product_name,product.product_real_name,main.insert_date,main.remarks,detail.*',false);
+ 		
+ 		$this->db->select('c.product_price as cost,(detail.product_price*detail.quantity) as sum_price,c.product_name,c.product_real_name,main.insert_date,main.remarks,detail.*',false);
  		$this->db->from('sale_detail as detail');
  		$this->db->join('sale_main as main','main.main_id=detail.main_id','inner');
- 		$this->db->join('product','product.product_id=detail.product_id','inner');
- 		$db_temp = $this->db->get()->result_array();
+ 		$this->db->join('product as c','c.product_id=detail.product_id','inner');
+ 		$this->db->where('detail.main_id',$main_id);
+		$db_temp = $this->db->get()->result_array();
  		$total_price = 0;
  		foreach($db_temp as $v){
  			$total_price += $v['sum_price']; 			
