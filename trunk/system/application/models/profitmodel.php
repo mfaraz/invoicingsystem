@@ -63,9 +63,10 @@ class Profitmodel extends model{
 	 */ 
 	function other_cost_detail($main_id){
 		if(empty($main_id)) return array();
- 		$this->db->where('detail.main_id',$main_id);
- 		$this->db->select('detail.detail_id,detail.main_id,detail.price,detail.remarks,main.insert_date');
+ 		
+ 		$this->db->select('detail.detail_id,detail.main_id,detail.price,detail.remarks,main.insert_date',false);
  		$this->db->from('other_cost_detail as detail');
+		$this->db->where('detail.main_id',$main_id);
  		$this->db->join('other_cost_main as main','main.main_id=detail.main_id','inner');
  		$db_temp = $this->db->get()->result_array();
  		$total_price = 0;

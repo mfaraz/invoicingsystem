@@ -112,7 +112,7 @@ $(document).ready(function(){
 		var inner_html  = $(this).html();
 		$(this).html('');		
 		$(this).css({"line-height":"150%", "width":"120px","z_index":"100","position":"absolute","left":new_left+"px","top":new_top+"px" });
-		var error_html = '<div><div style="width:100%;height:14px;"><img  src="/ci_logistic/images/error_msg_top.gif"></div>';
+		var error_html = '<div><div style="width:100%;height:14px;"><img  src="'+base_url+'/images/error_msg_top.gif"></div>';
 			 error_html += '<div  style="width:100%;float:left;font-size:12px;	color:red;	padding:5px;	border:1px solid #FF7C06;background:#FDFCEB;	z-index:-1;"><div style="float:left">'+inner_html+'</div>';
 			 error_html += '<div style="float:right;margin-top:-3px;margin-right:-2px;font-size:12px;"><a href="javascript:void(0);"  style="color:#FF8D00"><b>×<b></a></div></div></div>';
 			 
