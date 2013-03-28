@@ -36,7 +36,10 @@
 			</ul>	
 		</div>
 		<div title="利润" closable="false" icon="icon-profit" style="padding:10px;display:none;">
+
 			<ul>
+				<li><?php  echo anchor('profit/other_cost_add?TB_iframe=true&height=400&width=800', '添加其他成本', array('class'=>'thickbox','title' => '添加其他成本','target'=>'__myframe',));?>&nbsp;</li>
+				<li><?php  echo anchor('profit/other_cost?TB_iframe=true&height=400&width=800', '其他成本列表', array('class'=>'thickbox','title' => '其他成本列表','target'=>'__myframe',));?>&nbsp;</li>
 				<li><?php  echo anchor('profit/stat_by_date?TB_iframe=true&height=400&width=800', '日统计', array('class'=>'thickbox','title' => '日统计','target'=>'__myframe',));?>&nbsp;</li>
 				<li><?php  echo anchor('profit/stat_by_year?TB_iframe=true&height=400&width=800', '年统计', array('class'=>'thickbox','title' => '年统计','target'=>'__myframe',));?>&nbsp;</li>
 			</ul>

@@ -93,7 +93,7 @@
 	 * 其他成本
 	 */
 	function other_cost(){
-		$this->db->select("main.main_id,sum(detail.price) as price,date(main.insert_date) as insert_date")->from("other_cost_detail as detail")
+		$this->db->select("main.main_id,sum(detail.price) as price,date(main.insert_date) as insert_date",false)->from("other_cost_detail as detail")
 		->join("other_cost_main as main","main.main_id=detail.main_id","inner")
 		->group_by("detail.main_id")->order_by("detail.main_id","desc");			
 		$data = $this->mydb->getList();
